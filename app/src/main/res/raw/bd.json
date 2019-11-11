@@ -3,19 +3,19 @@
     {
       "tourId": "t1",
       "tourName": "Barcelona in two hours",
-      "tourImage": "https://raw.githubusercontent.com/Albertvedu/Barcelonina/master/app/src/main/java/Proyecto/barcelonina/img/t1.jpg",
+      "tourImage": "https://github.com/Albertvedu/BacelonaTours/raw/master/app/src/main/res/raw/imgt1.jpg",
       "tourDescription": "Do you have little time in Barcelona? Do you have a very tight schedule but you wish to visit at least one higlight? If this is your case, here you have the perfect Barcelona Private Tour."
     },
     {
       "tourId": "t2",
       "tourName": "Barcelona in three hours",
-      "tourImage": "https://raw.githubusercontent.com/Albertvedu/Barcelonina/master/app/src/main/java/Proyecto/barcelonina/img/t2.jpg",
+      "tourImage": "https://github.com/Albertvedu/BacelonaTours/raw/master/app/src/main/res/raw/imgt2.jpg",
       "tourDescription": "Gaudi en santa coloma"
     },
     {
       "tourId": "t3",
       "tourName": "Barcelona in four hours",
-      "tourImage": "https://raw.githubusercontent.com/Albertvedu/Barcelonina/master/app/src/main/java/Proyecto/barcelonina/img/t3.jpeg",
+      "tourImage": "https://github.com/Albertvedu/BacelonaTours/raw/master/app/src/main/res/raw/imgt3.jpg",
       "tourDescription": "Gaudi en santa coloma"
     }
   ]

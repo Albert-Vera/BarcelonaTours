@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class BarceloninaApiModule {
 
     public static BarceloninaApi barceloninaApi = new Retrofit.Builder()
-            .baseUrl("https://raw.githubusercontent.com/Albertvedu/Barcelonina/master/app/src/main/java/Proyecto/barcelonina/sampledata/bdjson/")
+            .baseUrl("https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/")
             .client(new OkHttpClient.Builder()
                     .addInterceptor(new Interceptor() {
                         @Override
