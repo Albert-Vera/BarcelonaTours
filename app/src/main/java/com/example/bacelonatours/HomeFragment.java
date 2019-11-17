@@ -2,6 +2,7 @@ package com.example.bacelonatours;
 
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,14 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.sunfusheng.marqueeview.MarqueeView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -19,6 +28,10 @@ import android.view.ViewGroup;
  */
 public class HomeFragment extends Fragment {
 
+
+    private TextView moviditor;
+    private ImageView imgHome;
+    private AnimationDrawable frameAnimation;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -42,6 +55,45 @@ public class HomeFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.tourListFragment);
             }
         });
+
+        moviditor = view.findViewById(R.id.movidito);
+        moviditor.setSelected(true);
+
+        imgHome = (ImageView) view.findViewById(R.id.fotoPortada);
+        imgHome.setImageResource(0);
+                  // set the xml with images
+        imgHome.setBackgroundResource(R.drawable.animation);
+                // get the background to show the animation
+        frameAnimation = (AnimationDrawable) imgHome.getBackground();
+
+                        // start frameAnimation
+        frameAnimation.start();
+
+                        // stop frameAnimation
+//        if(frameAnimation.isRunning()) {
+//            frameAnimation.stop();
+//            // set first image (optional)
+//            frameAnimation.selectDrawable(0);
+//        }
+
+        MarqueeView marqueeView = (MarqueeView) view.findViewById(R.id.marqueeView);
+        List<String> listText = new ArrayList<>();
+        listText.add("  Barcelona Local Guide");
+        listText.add("   Food And Wine Tours ");
+        listText.add("        Barcelona ahoy    ");
+        listText.add(" Discover Gaudi's Univers ");
+        listText.add(" Live a cultural Inmmersion");
+        listText.add("   Your Private Guide");
+
+        marqueeView.startWithList(listText);
+        marqueeView.setOnItemClickListener(new MarqueeView.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position, TextView textView) {
+                Toast.makeText(requireActivity(), ""+textView.getText(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
 
     }
 }

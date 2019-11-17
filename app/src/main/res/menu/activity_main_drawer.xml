@@ -14,14 +14,35 @@
     <item android:title="Communicate">
         <menu>
 
+
             <item
-                android:id="@+id/tourListFragment"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_tourList" />
+                android:id="@+id/menuopcio1"
+
+                android:title="@string/menu_opcio1" />
             <item
-                android:id="@+id/weAre"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_weAre" />
+                android:id="@+id/menuopcio2"
+
+                android:title="@string/menu_opcio2" />
+            <item
+                android:id="@+id/menuopcio3"
+
+                android:title="@string/menu_opcio3" />
+            <item
+                android:id="@+id/menuopcio4"
+
+                android:title="@string/menu_opcio4" />
+            <item
+                android:id="@+id/menuopcio5"
+
+                android:title="@string/menu_opcio5" />
+            <item
+                android:id="@+id/menuopcio6"
+
+                android:title="@string/menu_opcio6" />
+            <item
+                android:id="@+id/menuopcio7"
+
+                android:title="@string/menu_opcio7" />
         </menu>
     </item>
 

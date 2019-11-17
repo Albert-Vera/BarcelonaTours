@@ -3,10 +3,14 @@ package com.example.bacelonatours;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,18 +32,20 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TourListFragment extends Fragment {
+public class TourListFragment extends Fragment  {
 
     TourAdapter tourAdapter;
     MainViewModel mainViewModel;
     List<Tour> tourList = new ArrayList<>();
-
+    TextView txtMessage;   /// cosas del Fade IN
+    Animation animFadein;
     public TourListFragment() {}
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_tour_list, container, false);
+
     }
 
     @Override
@@ -61,6 +67,12 @@ public class TourListFragment extends Fragment {
                 tourAdapter.notifyDataSetChanged();
             }
         });
+
+//        txtMessage = (TextView) view.findViewById(R.id.tour_desc);
+//        // load the animation
+//        animFadein = AnimationUtils.loadAnimation(requireContext(),
+//                R.drawable.animationfade);
+
     }
 
     class TourViewHolder extends RecyclerView.ViewHolder {
@@ -80,7 +92,17 @@ public class TourListFragment extends Fragment {
         @NonNull
         @Override
         public TourViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new TourViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_tour, parent, false));
+
+          //  final Tour tour = tourList.get(position);
+
+//            if (tour.tourName.isEmpty()) {
+//
+//                return new TourViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_tour_modificado, parent, false));
+//            }else {
+
+
+                return new TourViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_tour, parent, false));
+            //}
         }
 
         @Override
@@ -88,14 +110,34 @@ public class TourListFragment extends Fragment {
 
             final Tour tour = tourList.get(position);
 
-            holder.name.setText(tour.tourName);
-            holder.desc.setText(tour.tourDescription);
-            Glide.with(requireActivity()).load(tour.tourImage).into(holder.imageTour);
+            if (tour.tourName.isEmpty()) {
+
+                holder.desc.setText(tour.tourDescription);
+            }else {
+                holder.name.setText(tour.tourName);
+                holder.desc.setText(tour.tourDescription);
+            }
+
+//            Glide.with(requireActivity()).load(tour.tourImage).into(holder.imageTour);
+            Glide.with(requireActivity()).load(R.raw.imgt1).into(holder.imageTour);
+
+            holder.imageTour.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    mainViewModel.tourId= tour.tourId;
+                    String s = "POR QUÉ TOCAS ?";
+                    Toast.makeText(requireActivity(), s, Toast.LENGTH_LONG).show();
+                    return false;
+                }
+
+
+            });
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     mainViewModel.tourId = tour.tourId;
+
 
                     Navigation.findNavController(view).navigate(R.id.detailFragment);
                 }

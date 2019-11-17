@@ -7,7 +7,8 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.bacelonatours.HomeFragment"
-        android:label="fragment_home"
+        android:label="   "
+
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_tourListFragment"
@@ -16,7 +17,7 @@
     <fragment
         android:id="@+id/tourListFragment"
         android:name="com.example.bacelonatours.TourListFragment"
-        android:label="fragment_tour_list"
+        android:label="    "
         tools:layout="@layout/fragment_tour_list" >
         <action
             android:id="@+id/action_tourListFragment_to_detailFragment"
@@ -25,6 +26,6 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.bacelonatours.DetailFragment"
-        android:label="fragment_detail"
+        android:label="  "
         tools:layout="@layout/fragment_detail" />
 </navigation>

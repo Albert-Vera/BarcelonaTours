@@ -1,5 +1,6 @@
 package com.example.bacelonatours;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //getSupportActionBar().hide();
+        //getWindow().setStatusBarColor(Color.TRANSPARENT);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

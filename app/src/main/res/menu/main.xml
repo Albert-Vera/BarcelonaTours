@@ -2,8 +2,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/settings"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/action_francais"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/englishsettings"
+        android:orderInCategory="100"
+        android:title="@string/action_ingles"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/catalasettings"
+        android:orderInCategory="100"
+        android:title="@string/action_catala"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/spainsettings"
+        android:orderInCategory="100"
+        android:title="@string/action_castellano"
         app:showAsAction="never" />
 </menu>
