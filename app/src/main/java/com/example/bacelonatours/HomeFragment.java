@@ -69,12 +69,6 @@ public class HomeFragment extends Fragment {
                         // start frameAnimation
         frameAnimation.start();
 
-                        // stop frameAnimation
-//        if(frameAnimation.isRunning()) {
-//            frameAnimation.stop();
-//            // set first image (optional)
-//            frameAnimation.selectDrawable(0);
-//        }
 
         MarqueeView marqueeView = (MarqueeView) view.findViewById(R.id.marqueeView);
         List<String> listText = new ArrayList<>();
@@ -86,13 +80,7 @@ public class HomeFragment extends Fragment {
         listText.add("   Your Private Guide");
 
         marqueeView.startWithList(listText);
-        marqueeView.setOnItemClickListener(new MarqueeView.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position, TextView textView) {
-                Toast.makeText(requireActivity(), ""+textView.getText(), Toast.LENGTH_SHORT).show();
 
-            }
-        });
 
 
     }
