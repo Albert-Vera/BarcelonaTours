@@ -1,8 +1,10 @@
 package com.example.bacelonatours.model;
 
+import java.util.List;
+
 public class Tour {
     public String tourId, tourName, tourDescription;
-    public String tourImage1,tourImage2,tourImage3,tourImage4;
+    public List<String> tourImages;
 
 
 }

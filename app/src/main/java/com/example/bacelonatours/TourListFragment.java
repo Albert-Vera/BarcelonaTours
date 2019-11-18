@@ -2,6 +2,7 @@ package com.example.bacelonatours;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -80,7 +82,8 @@ public class TourListFragment extends Fragment  {
 
     class TourViewHolder extends RecyclerView.ViewHolder {
         TextView name, desc;
-        ImageView tourImage1,tourImage2,tourImage3,tourImage4;
+        ImageView tourImage1,tourImage2,tourImage3,tourImage4, imagenArray;
+        ListView imageList;
 
         TourViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -113,54 +116,53 @@ public class TourListFragment extends Fragment  {
             final Tour tour = tourList.get(position);
 
             holder.name.setText(tour.tourName);
+            Log.e("ABCD", " lala" + tour.tourImages.get(0));
 
-//            Glide.with(requireActivity()).load(R.raw.imgt1).into(holder.imageTour);
+//            Glide.with(requireActivity()).load(tour.tourImages.get(0)).into(holder.tourImage1);
 
 
+            for (int i = 0; i < tour.tourImages.size() ; i++) {
 
+                switch (i) {
+                    case 0:
 
-                if (tour.tourImage1 != null) {
-
-                    Glide.with(requireActivity()).load(R.raw.imgt1).into(holder.tourImage1);
-                } else {
-                    holder.tourImage1.setVisibility(View.GONE);
+                        holder.imagenArray = holder.tourImage1;
+                        break;
+                    case 1:
+                        holder.imagenArray = holder.tourImage2;
+                        break;
+                    case 2:
+                        holder.imagenArray = holder.tourImage3;
+                        break;
+                    case 3:
+                        holder.imagenArray = holder.tourImage4;
+                        break;
                 }
-            if (tour.tourImage2 != null) {
-                Glide.with(requireActivity()).load(R.raw.imgt1).into(holder.tourImage2);
-            } else {
-                holder.tourImage2.setVisibility(View.GONE);
-            }
-            if (tour.tourImage3 != null) {
-                Glide.with(requireActivity()).load(R.raw.imgt1).into(holder.tourImage3);
-            } else {
-                holder.tourImage3.setVisibility(View.GONE);
-            }
-            if (tour.tourImage4 != null) {
-                Glide.with(requireActivity()).load(R.raw.imgt1).into(holder.tourImage4);
-            } else {
-                holder.tourImage4.setVisibility(View.GONE);
-            }
-
-                holder.tourImage1.setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        mainViewModel.tourId = tour.tourId;
-                        String s = "POR QUÉ TOCAS ?";
-                        new AlertDialog.Builder(requireContext()).setTitle(tour.tourName)
-                                .setMessage("precio tal y cual")
-                                .setCancelable(true)
-                                .create()
-                                .show();
-//                    Toast toastPosition =
-//                    Toast.makeText(requireActivity(), s+tour.tourName, Toast.LENGTH_LONG);
-//                    //toastPosition.setView();
-//                    toastPosition.setGravity(Gravity.CENTER|Gravity.CENTER_HORIZONTAL,0,0);
-//                    toastPosition.show();
-                        return false;
-                    }
 
 
-                });
+                if (tour.tourImages.get(i) != null) {
+                    Glide.with(requireActivity()).load(tour.tourImages.get(i)).into(holder.imagenArray);
+                } else {
+                    holder.imagenArray.setVisibility(View.GONE);
+                }
+//
+//
+//                holder.imagenArray.setOnTouchListener(new View.OnTouchListener() {
+//                    @Override
+//                    public boolean onTouch(View v, MotionEvent event) {
+//                        mainViewModel.tourId = tour.tourId;
+//                        String s = "POR QUÉ TOCAS ?";
+//                        new AlertDialog.Builder(requireContext()).setTitle(tour.tourName)
+//                                .setMessage("precio tal y cual")
+//                                .setCancelable(true)
+//                                .create()
+//                                .show();
+//                        return true;
+//                    }
+//
+//
+//                });
+            }
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
