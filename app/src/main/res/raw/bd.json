@@ -10,7 +10,7 @@
 
     {
       "tourId": "t2",
-      "tourName": "Barcelona in two hours",
+      "tourName": null,
       "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imgt2.jpg",
       "tourDescription": "Do you have little time in Barcelona?",
       "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1"
@@ -18,7 +18,7 @@
 
     {
       "tourId": "t3",
-      "tourName": "Barcelona in two hours",
+      "tourName": null,
       "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imgt3.jpg",
       "tourDescription": "Do you have little time in Barcelona?",
       "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1"
@@ -26,28 +26,28 @@
 
     {
       "tourId": "t4",
-      "tourName": "Barcelona in two hours",
+      "tourName": null,
       "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imgt4.jpg",
       "tourDescription": "Do you have little time in Barcelona?",
       "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1"
     },
     {
       "tourId": "t5",
-      "tourName": "Barcelona in two hours",
+      "tourName": "Barcelona in three hours",
       "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imgt5.jpg",
       "tourDescription": "Do you have little time in Barcelona?",
       "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1"
     },
     {
       "tourId": "t6",
-      "tourName": "Barcelona in two hours",
+      "tourName": null,
       "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imgt6.jpg",
       "tourDescription": "Do you have little time in Barcelona?",
       "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1"
     },
     {
-      "tourId": "t2",
-      "tourName": "Barcelona in three hours",
+      "tourId": "t7",
+      "tourName": null,
       "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imgt3.jpg",
       "tourDescription": "klklkl"
     }

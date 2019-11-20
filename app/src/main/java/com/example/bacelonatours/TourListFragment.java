@@ -74,21 +74,17 @@ public class TourListFragment extends Fragment  {
     }
 
     class TourViewHolder extends RecyclerView.ViewHolder {
-        TextView name, desc, desc1, desc2, desc3, desc4;
-        ImageView tourImage1,tourImage2,tourImage3,tourImage4, imagenArray;
+        TextView name, desc;
+        ImageView imageItem;
 
         TourViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.tour_name);
-            desc1 = itemView.findViewById(R.id.textImage1);
-            desc2 = itemView.findViewById(R.id.textImage2);
-            desc3 = itemView.findViewById(R.id.textImage3);
-            desc4 = itemView.findViewById(R.id.textImage4);
+            desc = itemView.findViewById(R.id.textImage);
 
-            tourImage1 = itemView.findViewById(R.id.tour_image1);
-            tourImage2 = itemView.findViewById(R.id.tour_image2);
-            tourImage3 = itemView.findViewById(R.id.tour_image3);
-            tourImage4 = itemView.findViewById(R.id.tour_image4);
+
+            imageItem = itemView.findViewById(R.id.tour_image);
+
         }
     }
 
@@ -104,43 +100,25 @@ public class TourListFragment extends Fragment  {
         public void onBindViewHolder(@NonNull final TourViewHolder holder, final int position) {
 
             final Tour tour = tourList.get(position);
-            tour.positionImage= position;
-            holder.name.setText(tour.tourName);
-            Log.e("ABCD", " lala " + tour.tourImages.get(0));
 
-            for (int i = 0; i < tour.tourImages.size() ; i++) {
-
-                switch (i) {
-                    case 0:
-                        holder.desc1.setText(tour.tourDescription);
-                        holder.desc = holder.desc1;
-                        holder.imagenArray = holder.tourImage1;
-
-                        break;
-                    case 1:
-                        holder.desc2.setText(tour.tourDescription);
-                        holder.imagenArray = holder.tourImage2;
-                        holder.desc = holder.desc2;
-                        break;
-                    case 2:
-                        holder.desc3.setText(tour.tourDescription);
-                        holder.imagenArray = holder.tourImage3;
-                        holder.desc = holder.desc3;
-                        break;
-                    case 3:
-                        holder.desc4.setText(tour.tourDescription);
-                        holder.imagenArray = holder.tourImage4;
-                        holder.desc = holder.desc4;
-                        break;
-                }
+            //holder.name.setText(tour.tourName);
+            holder.desc.setText(tour.tourDescription);
+            Log.e("ABCD", " lala " + tour.tourImages);
+            Glide.with(requireActivity()).load(tour.tourImages).into(holder.imageItem);
 
 
-                if (tour.tourImages.get(i) != null) {
-                    Glide.with(requireActivity()).load(tour.tourImages.get(i)).into(holder.imagenArray);
 
+
+
+
+                if (tour.tourName != null) {
+                    holder.name.setText(tour.tourName);
+                    //Glide.with(requireActivity()).load(tour.tourImages.get(i)).into(holder.imagenArray);
+                   // Glide.with(requireActivity()).load(tour.tourImages).into(holder.imageItem);
                 } else {
-                    holder.desc.setVisibility(TextView.GONE);
-                    holder.imagenArray.setVisibility(View.GONE);
+                    holder.name.setVisibility(TextView.GONE);
+//                    holder.desc.setVisibility(TextView.GONE);
+//                    holder.imageItem.setVisibility(View.GONE);
                 }
 //
 //
@@ -159,7 +137,7 @@ public class TourListFragment extends Fragment  {
 //
 //
 //                });
-            }
+
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
