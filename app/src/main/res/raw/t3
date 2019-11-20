@@ -1,4 +1,8 @@
 {
-    "tourName": "sdfklsdfs",
-    "tourDescription", "kldsfjkdlsfjdfs"
+      "tourId": "t3",
+      "tourName": null,
+      "tourImage": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/born.jpg",
+      "tourDescription": "Do you have little time in Barcelona?",
+      "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1",
+      "tourExplain": "Empelzads adlgkjdasgkl djasgkldjasgkl djasgk djasgkljadgklg g jlagj gjkldasgkldasj gkldasgk adl jg"
 }

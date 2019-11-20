@@ -62,10 +62,6 @@
                         android:layout_width="355dp"
                         android:layout_height="167dp"
                         android:scaleType="fitXY"
-
-
-
-
                         android:padding="10dp"
 
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,9 +77,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="50dp"
+                        android:layout_margin="15dp"
                         android:text="@string/textImage1"
                         android:textColor="@color/White"
-                        android:textSize="22dp"
+
+                        android:textSize="22sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent">
 
