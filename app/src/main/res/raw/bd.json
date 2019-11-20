@@ -3,32 +3,32 @@
     {
       "tourId": "t1",
       "tourName": "Barcelona in two hours",
-      "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imgt1.jpg",
-      "tourDescription": "Do you have little time in Barcelona?",
+      "tourImages" : "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/raval.jpg",
+      "tourDescription": "Ruta llegendària pel Raval",
       "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1"
     },
 
     {
       "tourId": "t2",
       "tourName": null,
-      "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imgt2.jpg",
-      "tourDescription": "Do you have little time in Barcelona?",
+      "tourImages" : "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/gotic.jpg",
+      "tourDescription": "Ruta pel Barri Gòtic de Barcelona",
       "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1"
     },
 
     {
       "tourId": "t3",
       "tourName": null,
-      "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imgt3.jpg",
-      "tourDescription": "Do you have little time in Barcelona?",
+      "tourImages" : "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/born.jpg",
+      "tourDescription": "Llegendes del Born",
       "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1"
     },
 
     {
       "tourId": "t4",
       "tourName": null,
-      "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imgt4.jpg",
-      "tourDescription": "Do you have little time in Barcelona?",
+      "tourImages" : "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/artfemeni.jpg",
+      "tourDescription": "Barcelona en Femení. El Gòtic i la Ribera",
       "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1"
     },
     {
