@@ -139,7 +139,7 @@ public class TourListFragment extends Fragment  {
 //                });
 
 
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
+            holder.imageItem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     mainViewModel.tour.setValue(tour);
