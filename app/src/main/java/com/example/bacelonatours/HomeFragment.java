@@ -65,8 +65,6 @@ public class HomeFragment extends Fragment {
         imgHome.setBackgroundResource(R.drawable.animation);
                 // get the background to show the animation
         frameAnimation = (AnimationDrawable) imgHome.getBackground();
-
-                        // start frameAnimation
         frameAnimation.start();
 
 
