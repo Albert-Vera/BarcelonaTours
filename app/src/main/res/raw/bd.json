@@ -50,8 +50,13 @@
       "tourName": "Barcelona en Tres Horas",
       "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/miro.jpg",
       "tourDescription": "Gaudi, Picasso i Miró a Barcelona"
+    },
+    {
+      "tourId": "t8",
+      "tourName": null,
+      "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/mercats.jpg",
+      "tourDescription": "Gaudi, Picasso i Miró a Barcelona"
     }
-
   ]
 }
 

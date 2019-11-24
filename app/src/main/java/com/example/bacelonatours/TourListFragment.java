@@ -144,9 +144,9 @@ public class TourListFragment extends Fragment  {
                 @Override
                 public void onClick(View view) {
                     mainViewModel.tour.setValue(tour);
-                    Snackbar snackbar = Snackbar
-                            .make(requireView(), "Mensaje a mostrar", Snackbar.LENGTH_LONG);
-                    snackbar.show();
+//                    Snackbar snackbar = Snackbar
+//                            .make(requireView(), "Mensaje a mostrar", Snackbar.LENGTH_LONG);
+//                    snackbar.show();
 
                     Navigation.findNavController(view).navigate(R.id.detailFragment);
                 }
