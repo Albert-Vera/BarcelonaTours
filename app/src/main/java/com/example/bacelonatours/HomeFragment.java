@@ -10,6 +10,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +25,8 @@ import com.sunfusheng.marqueeview.MarqueeView;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,7 +34,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
 
-    private TextView moviditor;
+    private TextView moviditor, login;
     private ImageView imgHome;
     private AnimationDrawable frameAnimation;
 
@@ -55,10 +60,34 @@ public class HomeFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.tourListFragment);
             }
         });
+        view.findViewById(R.id.movidito).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast toast1 =
+                        Toast.makeText(requireActivity(),
+                                "Por qué Tocas !", Toast.LENGTH_SHORT);
+                toast1.setGravity(Gravity.CENTER|Gravity.LEFT,250,0);
+                toast1.show();
+            }
+        });
+        view.findViewById(R.id.loginHome).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.login);
+            }
+        });
 
+                    //  SUBRAYAR TEXTO LOGIN
+        login = view.findViewById(R.id.loginHome);
+        SpannableString subrallarLogin = new SpannableString("Login");
+        subrallarLogin.setSpan(new UnderlineSpan(), 0, subrallarLogin.length(), 0);
+        login.setText(subrallarLogin);
+
+                    // TEXTO DE LA HOME QUE VA CORRIENDO
         moviditor = view.findViewById(R.id.movidito);
         moviditor.setSelected(true);
 
+                    // IMAGENES DE LA HOME ALTERNAS
         imgHome = (ImageView) view.findViewById(R.id.fotoPortada);
         imgHome.setImageResource(0);
                   // set the xml with images
@@ -67,7 +96,7 @@ public class HomeFragment extends Fragment {
         frameAnimation = (AnimationDrawable) imgHome.getBackground();
         frameAnimation.start();
 
-
+                            // TEXTO DE LA IMAGENHOME CON MOVIMIENTO
         MarqueeView marqueeView = (MarqueeView) view.findViewById(R.id.marqueeView);
         List<String> listText = new ArrayList<>();
         listText.add("  Barcelona Local Guide");
@@ -78,6 +107,7 @@ public class HomeFragment extends Fragment {
         listText.add("   Your Private Guide");
 
         marqueeView.startWithList(listText);
+
 
 
 

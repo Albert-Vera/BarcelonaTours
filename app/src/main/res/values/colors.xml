@@ -5,5 +5,12 @@
     <color name="colorAccent">#D81B60</color>
     <color name="White">#FFF</color>
     <color name="Raro">#EEE8D7</color>
+    <color name="iconomenu">#8A7A6C</color>
     <color name="Negre">#0a0a0a</color>
+    <color name="colorTextBoxBack">#0A5D5B</color>
+    <color name="colorHint">#c3acacac</color>
+    <color name="colorLoginButton">#FFFFFF</color>
+    <color name="colorInput">#FFFFFF</color>
+    <color name="colorLogin_azul">#3b83bd</color>
+
 </resources>

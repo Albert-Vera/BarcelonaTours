@@ -28,6 +28,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.bacelonatours.model.BarceloninaResponse;
 import com.example.bacelonatours.model.Tour;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -122,7 +123,7 @@ public class TourListFragment extends Fragment  {
                 }
 //
 //
-//                holder.imagenArray.setOnTouchListener(new View.OnTouchListener() {
+//                holder.imageItem.setOnTouchListener(new View.OnTouchListener() {
 //                    @Override
 //                    public boolean onTouch(View v, MotionEvent event) {
 //                        mainViewModel.tourId = tour.tourId;
@@ -143,6 +144,9 @@ public class TourListFragment extends Fragment  {
                 @Override
                 public void onClick(View view) {
                     mainViewModel.tour.setValue(tour);
+                    Snackbar snackbar = Snackbar
+                            .make(requireView(), "Mensaje a mostrar", Snackbar.LENGTH_LONG);
+                    snackbar.show();
 
                     Navigation.findNavController(view).navigate(R.id.detailFragment);
                 }

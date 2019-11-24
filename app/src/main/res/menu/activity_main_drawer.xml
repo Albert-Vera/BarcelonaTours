@@ -8,19 +8,22 @@
             android:id="@+id/homeFragment"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
-
+        <item
+            android:id="@+id/galeryFotos"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_fotos" />
     </group>
 
-    <item android:title="Communicate">
+    <item >
         <menu>
 
 
             <item
-                android:id="@+id/menuopcio1"
+                android:id="@+id/tourListFragment"
 
                 android:title="@string/menu_opcio1" />
             <item
-                android:id="@+id/menuopcio2"
+                android:id="@+id/login"
 
                 android:title="@string/menu_opcio2" />
             <item
@@ -43,6 +46,14 @@
                 android:id="@+id/menuopcio7"
 
                 android:title="@string/menu_opcio7" />
+            <item
+                android:id="@+id/menuopcio8"
+
+                android:title="@string/menu_opcio8" />
+            <item
+                android:id="@+id/menuopcio9"
+
+                android:title="@string/menu_opcio9" />
         </menu>
     </item>
 

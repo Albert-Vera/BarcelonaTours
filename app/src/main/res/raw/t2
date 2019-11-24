@@ -1,8 +1,10 @@
 {
       "tourId": "t2",
-      "tourName": null,
-      "tourImage": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/barrijueu.jpg",
+      "tourName": "Ruta pel Barri Gòtic de Barcelona",
+      "tourImage": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/gotic.jpg",
       "tourDescription": "Ruta per l'Antic Barri Jueu",
       "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1",
-      "tourExplain": "Empelzads adlgkjdasgkl djasgkldjasgkl djasgk djasgkljadgklg g jlagj gjkldasgkldasj gkldasgk adl jg"
+      "tourExplain": "Les nostre rutes són aptes per a tots els públics. A més a més, al ser privades, ens adaptem perfectament al ritme del grup.
+
+                      Per començar aquest itinerari pel Barri Gòtic, us trobareu amb el vostre guia a la porta de la Barcino Romana per trepitjar el Cardus i el Decomanus Maximus….i no, no pateixis, això no serà una classe magistral d’història. Com deia, ens trobarem a l’entrada de la Barcelona romana per conèixer els primers barcelonins i començar a caminar tot desxifrant la façana de la Catedral, descobrint els diferents nivells la Plaça del Reifins arribar a l’actual Forum, "
 }

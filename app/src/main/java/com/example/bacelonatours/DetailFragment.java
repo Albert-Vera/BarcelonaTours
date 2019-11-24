@@ -23,10 +23,13 @@ public class DetailFragment extends Fragment {
 
     MainViewModel mainViewModel;
 
-    TextView titulo, descripcion;
+    TextView titulo, descripcion, explain;
     ImageView imagenDetail;
 
     Tour tour;
+//    Matrix matrix = new Matrix();
+//    Float scale= 1f;
+//    ScaleGestureDetector SGD;
 
     public DetailFragment() {}
 
@@ -41,25 +44,47 @@ public class DetailFragment extends Fragment {
 
         mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
 
-        titulo = view.findViewById(R.id.probando);
+        titulo = view.findViewById(R.id.detail);
+        descripcion = view.findViewById(R.id.tourResource);
+        explain = view.findViewById(R.id.tourExplain);
         imagenDetail = view.findViewById(R.id.imageDetail);
-
+        //SGD = new ScaleGestureDetector(requireActivity(), new ScaleListener());
         mainViewModel.tour.observe(getViewLifecycleOwner(), new Observer<Tour>() {
             @Override
             public void onChanged(Tour tour) {
                 mostrarDetalleDelTour(tour);
             }
         });
+
     }
 
     private void mostrarDetalleDelTour(Tour tour) {
         mainViewModel.obtenerTourDetail(tour.tourId).observe(getViewLifecycleOwner(), new Observer<TourDetail>() {
             @Override
             public void onChanged(TourDetail tourDetail) {
+                Log.e("ABCD", " lalacosa " + tourDetail.tourDescription);
                 titulo.setText(tourDetail.tourName);
                 Glide.with(requireActivity()).load(tourDetail.tourImage).into(imagenDetail);
-
+                descripcion.setText(tourDetail.tourDescription);
+                explain.setText(tourDetail.tourExplain);
             }
         });
     }
+
+//    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener{
+//        @Override
+//        public boolean onScale(ScaleGestureDetector detector) {
+//            scale = scale*detector.getScaleFactor();
+//            scale = Math.max(0.1f,Math.min(scale,5f));
+//            //matrix.setScale(scale,scale);
+//            imagenDetail.setImageMatrix(matrix);
+//            return true;
+//        }
+//    }
+//
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event){
+//        SGD.onTouchEvent(event);
+//        return true;
+//    }
 }

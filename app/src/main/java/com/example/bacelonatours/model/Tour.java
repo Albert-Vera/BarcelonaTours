@@ -8,4 +8,6 @@ public class Tour {
     public String tourImages;
     public String tourResource;
 
+
+
 }

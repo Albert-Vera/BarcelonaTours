@@ -45,4 +45,7 @@ dependencies {
 
     implementation 'com.sunfusheng:marqueeview:1.2.0'
 
+    implementation 'com.moldedbits.argus:argus:0.2.0'
+
+
 }

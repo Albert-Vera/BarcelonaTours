@@ -5,7 +5,7 @@
       "tourName": "Barcelona in two hours",
       "tourImages" : "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/raval.jpg",
       "tourDescription": "Ruta llegendària pel Raval",
-      "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1"
+      "tourResource": "sadsadsadadadadasdawt1"
     },
 
     {
@@ -48,8 +48,8 @@
     {
       "tourId": "t7",
       "tourName": "Barcelona en Tres Horas",
-      "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imgt3.jpg",
-      "tourDescription": "klklkl"
+      "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/miro.jpg",
+      "tourDescription": "Gaudi, Picasso i Miró a Barcelona"
     }
 
   ]

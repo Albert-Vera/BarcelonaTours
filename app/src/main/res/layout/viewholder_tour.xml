@@ -78,7 +78,7 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="50dp"
                         android:layout_margin="15dp"
-                        android:text="@string/textImage1"
+
                         android:textColor="@color/White"
 
                         android:textSize="22sp"

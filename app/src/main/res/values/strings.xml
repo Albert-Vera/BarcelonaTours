@@ -2,31 +2,33 @@
     <string name="app_name">BacelonaTours</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Barcelona Tours</string>
-    <string name="nav_header_subtitle">The privat guide</string>
+    <string name="nav_header_title">Barcelonina</string>
+    <string name="nav_header_subtitle">Visites Guiades a Barcelona</string>
     <string name="nav_header_desc">Navigation header</string>
+
+
+    <string name="menu_fotos">Galeria de Fotos</string>
+    <string name="menu_home">Home</string>
+
+
     <string name="action_francais">Français</string>
     <string name="action_ingles">English</string>
     <string name="action_catala">Català</string>
-    <string name="action_castellano">Spain</string>
+    <string name="action_castellano">Castellà</string>
+    <string name="explorar_tours">Explorar les Notres Rutas</string>
+    <string name="menu_opcio8">Galeria de Fotos</string>
+    <string name="menu_opcio7">Tours Preferits</string>
+    <string name="menu_opcio1">Les Nostres Rutes</string>
+    <string name="menu_opcio2">Visites a Mida</string>
+    <string name="menu_opcio3">"Activitats d'empresa"</string>
+    <string name="menu_opcio4">"Bloc: Idees i Consells"</string>
+    <string name="menu_opcio5">Busques la Ruta Perfecte</string>
+    <string name="menu_opcio6">Tour Gastronòmic Barcelona</string>
+    <string name="menu_opcio9">Contact</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_weAre">Qui som ?</string>
-    <string name="menu_opcio1">Browse our tours</string>
-    <string name="menu_opcio2">"Let's Go Bespoke"</string>
-    <string name="menu_opcio3">Incentives Barcelona</string>
-    <string name="menu_opcio4">Barcelona Food Tours</string>
-    <string name="menu_opcio5">Blog: Tips and Ideas</string>
-    <string name="menu_opcio6">Tourism In Barcelona</string>
-    <string name="menu_opcio7">Contact</string>
-    <string name="textImage1">Prueba de Sonido</string>
-    <string name="textImage2">Prueba de aire</string>
-    <string name="textImage3">Prueba de viento</string>
-    <string name="textImage4">Prueba de ruido</string>
+    <string name="detailpreu">180 euros</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

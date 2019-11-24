@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_tourListFragment"
             app:destination="@id/tourListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_login"
+            app:destination="@id/login" />
     </fragment>
     <fragment
         android:id="@+id/tourListFragment"
@@ -28,4 +31,14 @@
         android:name="com.example.bacelonatours.DetailFragment"
         android:label="  "
         tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/galeryFotos"
+        android:name="com.example.bacelonatours.galeryFotos"
+        android:label="fragment_galery_fotos"
+        tools:layout="@layout/fragment_galery_fotos" />
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.bacelonatours.Login"
+        android:label=""
+        tools:layout="@layout/fragment_login" />
 </navigation>

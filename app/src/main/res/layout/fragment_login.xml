@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_gradient"
+    tools:context=".Login">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="173dp"
+            android:layout_height="101dp"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/logo">
+
+        </ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginLeft="130dp"
+            android:text="@string/nav_header_title"
+            android:textSize="22sp"
+            android:textAlignment="center">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/userName"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="40dp"
+            android:background="@color/colorTextBoxBack"
+            android:drawableLeft="@drawable/ic_person_outline_white_24dp"
+            android:padding="5dp"
+            android:hint="User Name"
+            android:textColorHint="@color/colorHint"
+            android:textColor="@color/colorInput"
+            android:textSize="22sp">
+
+        </EditText>
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:background="@color/colorTextBoxBack"
+            android:drawableLeft="@drawable/ic_lock_white_24dp"
+            android:padding="5dp"
+            android:hint="Password"
+            android:textColorHint="@color/colorHint"
+            android:textColor="@color/colorInput"
+            android:textSize="22sp"
+            android:inputType="textPassword">
+
+        </EditText>
+        <Button
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:textSize="22sp"
+            android:text="LOGIN"
+            android:textColor="@color/colorInput"
+            android:background="@drawable/loginbutton_back">
+
+        </Button>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register Here"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="120dp"
+            android:textSize="22sp"
+            android:textColor="@color/colorInput"
+            android:padding="5dp">
+
+        </TextView>
+    </LinearLayout>
+
+</FrameLayout>
