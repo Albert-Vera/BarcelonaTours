@@ -1,8 +1,12 @@
 {
       "tourId": "t3",
-      "tourName": null,
+      "tourName": "Llegendes del Born",
       "tourImage": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/born.jpg",
-      "tourDescription": "Do you have little time in Barcelona?",
+      "tourDescription": "  Preu: 180e. (grup de 1-6 persones)\n 2 hores de recorregut\n",
       "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1",
-      "tourExplain": "Empelzads adlgkjdasgkl djasgkldjasgkl djasgk djasgkljadgklg g jlagj gjkldasgkldasj gkldasgk adl jg"
+      "tourExplain": "\n\nT’agrada la història?\n S’acosta una celebració familiar i t’agradaria fer una activitat original?\n\n  Les nostre rutes són aptes per a tots els públics. A més a més, al ser privades, ens adaptem perfectament al ritme del grup.
+
+                                                                                                                              Una passejada explorant el barri del Born, el barri artesà i menestral de la ciutat. Coneixereu les històries d’Hostalers, Màrtirs i Cavallers i parlarem d’Exorcismes i fins i tots de canvis de sexe.
+
+                                                                                                                              Ens trobarem a la Plaça de Ramón Berenguer III per travessar Via Laietana i endinsar-nos el barri “passant la Bòria avall”. El petits carrerons, els magnífics Palaus i les places plenes d’encant del barri ens ajudaran a descobrir la història a través de la mirada dels seus protagonistes."
 }

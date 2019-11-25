@@ -41,6 +41,14 @@ public class Login extends Fragment {
         userName = view.findViewById(R.id.username);
         password = view.findViewById(R.id.password);
 
+
+        view.findViewById(R.id.iraregistro).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.registrarse);
+            }
+        });
+
 //        if (userName.getText().toString().isEmpty()) {
 //                    userName.setError("Introduzca su nombre");
 //                    return;

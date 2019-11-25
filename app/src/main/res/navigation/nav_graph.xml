@@ -40,5 +40,29 @@
         android:id="@+id/login"
         android:name="com.example.bacelonatours.Login"
         android:label=""
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_registrarse"
+            app:destination="@id/registrarse" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrarse"
+        android:name="com.example.bacelonatours.registrarse"
+        android:label="fragment_registrarse"
+        tools:layout="@layout/fragment_registrarse" />
+    <fragment
+        android:id="@+id/cerrarfragment"
+        android:name="com.example.bacelonatours.cerrarfragment"
+        android:label="fragment_cerrarfragment"
+        tools:layout="@layout/fragment_cerrarfragment" />
+    <fragment
+        android:id="@+id/contacto"
+        android:name="com.example.bacelonatours.contacto"
+        android:label="fragment_contacto"
+        tools:layout="@layout/fragment_contacto" />
+    <fragment
+        android:id="@+id/verperfilfragment"
+        android:name="com.example.bacelonatours.verperfilfragment"
+        android:label="fragment_verperfilfragment"
+        tools:layout="@layout/fragment_verperfilfragment" />
 </navigation>

@@ -1,17 +1,21 @@
 package com.example.bacelonatours;
 
 import android.app.Application;
+import android.os.AsyncTask;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.room.Entity;
 
 import com.example.bacelonatours.api.BarceloninaApiModule;
+import com.example.bacelonatours.model.AppDao;
 import com.example.bacelonatours.model.BarceloninaResponse;
 import com.example.bacelonatours.model.Tour;
 import com.example.bacelonatours.model.TourDetail;
+import com.example.bacelonatours.model.Usuario;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
@@ -25,16 +29,21 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
+
 public class MainViewModel extends AndroidViewModel {
 
     Application application;
+    AppDao appDao;
 
 
     public MutableLiveData<Tour> tour = new MutableLiveData<>();
+    public MutableLiveData<Boolean> usuarioNoDisponible= new MutableLiveData<>();
 
     public MainViewModel(@NonNull Application application) {
         super(application);
         this.application = application;
+        appDao = AppDataBase.getInstance(application).appDao();
     }
 
     public LiveData<BarceloninaResponse> obtenerTours(){
@@ -75,6 +84,24 @@ public class MainViewModel extends AndroidViewModel {
         }
 
         return apiResponse;
+    }
+
+    public void resgistrarUsuario(String email, String password){
+
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                Usuario usuario = appDao.comprobarEmailDisponible(email);
+
+                if(usuario == null){
+                    appDao .insertarUsuario (new Usuario(email, password));
+                }else {
+                    usuarioNoDisponible.postValue(true);   // posvalue cuando esta esperando datos
+
+                }
+            }
+        });
+
     }
 
 

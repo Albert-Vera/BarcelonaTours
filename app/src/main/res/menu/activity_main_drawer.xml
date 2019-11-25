@@ -17,7 +17,10 @@
     <item >
         <menu>
 
+            <item
+                android:id="@+id/contact"
 
+                android:title="@string/menu_opcio9" />
             <item
                 android:id="@+id/tourListFragment"
 
@@ -50,10 +53,7 @@
                 android:id="@+id/menuopcio8"
 
                 android:title="@string/menu_opcio8" />
-            <item
-                android:id="@+id/menuopcio9"
 
-                android:title="@string/menu_opcio9" />
         </menu>
     </item>
 

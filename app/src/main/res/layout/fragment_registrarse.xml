@@ -3,10 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back_gradient"
-    tools:context=".Login">
+    tools:context=".registrarse">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="430dp"
@@ -62,29 +60,18 @@
 
         </EditText>
         <Button
-            android:id="@+id/loginboton"
+            android:id="@+id/registerboton"
             android:layout_width="290dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="40dp"
             android:textSize="22sp"
-            android:text="LOGIN"
+            android:text="REGISTRARSE"
             android:textColor="@color/colorInput"
             android:background="@drawable/loginbutton_back">
 
         </Button>
-        <TextView
-            android:id="@+id/iraregistro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Register Here"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="120dp"
-            android:textSize="22sp"
-            android:textColor="@color/colorInput"
-            android:padding="5dp">
 
-        </TextView>
     </LinearLayout>
 
 </FrameLayout>

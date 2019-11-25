@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".verperfilfragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/verperfil"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+    <Button
+        android:id="@+id/verperfilboton"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:textSize="22sp"
+        android:text="REGISTRARSE"
+        android:textColor="@color/colorInput"
+        android:background="@drawable/loginbutton_back">
+    <Button
+        android:id="@+id/boton"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:textSize="22sp"
+        android:text="REGISTRARSE"
+        android:textColor="@color/colorInput"
+        android:background="@drawable/loginbutton_back">
+</FrameLayout>

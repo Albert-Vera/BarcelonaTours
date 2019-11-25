@@ -1,8 +1,10 @@
 {
       "tourId": "t6",
-      "tourName": null,
+      "tourName": "Ruta per l'Antic Barri Jueu",
       "tourImage": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/gotic.jpg",
-      "tourDescription": "Ruta per l'Antic Barri Jueu",
+      "tourDescription": "  Preu: 180e. (grup de 1-6 persones)     2 hores de recorregut\n",
       "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1",
-      "tourExplain": "Empelzads adlgkjdasgkl djasgkldjasgkl djasgk djasgkljadgklg g jlagj gjkldasgkldasj gkldasgk adl jg"
+      "tourExplain": "\n\nRuta per l’antic Barri Jueu de Barcelona de la mà d’un guia local\n\n Sabem que a Barcelona hi havia jueus ja en el segle IX i que poc després ja eren una comunitat nombrosa amb un barri delimitat. Els barcelonins jueus van tenir un rol molt important en l’esplendor de la Corona d’Aragó i en el creixement de Barcelona. Us proposem seguir les seves petjades per descobrir com Barcelona va acollir els jueus, com van conviure amb els cristians i com van ser expulsats.
+
+                                                                                                   Durant la ruta visitarem el Centre d’Interpretació del Call. És per això que aquest itinerari el fem dimecres i divendres al matí i dissabte i diumenge matí o tarda."
 }

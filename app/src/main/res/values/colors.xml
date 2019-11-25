@@ -12,5 +12,7 @@
     <color name="colorLoginButton">#FFFFFF</color>
     <color name="colorInput">#FFFFFF</color>
     <color name="colorLogin_azul">#3b83bd</color>
+    <color name="colorfondowhite">#FFF</color>
+    <color name="colorfondogris">#018C89</color>
 
 </resources>

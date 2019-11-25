@@ -28,7 +28,7 @@
       "tourId": "t4",
       "tourName": null,
       "tourImages" : "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/artfemeni.jpg",
-      "tourDescription": "Barcelona en Femení. El Gòtic i la Ribera",
+      "tourDescription": "Barcelona en Femení. ",
       "tourResource": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/t1"
     },
     {
@@ -54,8 +54,8 @@
     {
       "tourId": "t8",
       "tourName": null,
-      "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/mercats.jpg",
-      "tourDescription": "Gaudi, Picasso i Miró a Barcelona"
+      "tourImages" :   "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imagenes/mercats.jpg",
+      "tourDescription": "Itinerari pels Mercats de Barcelona."
     }
   ]
 }
