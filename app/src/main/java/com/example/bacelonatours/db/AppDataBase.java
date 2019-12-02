@@ -1,4 +1,4 @@
-package com.example.bacelonatours;
+package com.example.bacelonatours.db;
 
 
 import android.content.Context;
@@ -10,11 +10,12 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.example.bacelonatours.model.AppDao;
 import com.example.bacelonatours.model.Usuario;
 
+import java.util.concurrent.Callable;
+
 @Database(entities = {Usuario.class}, version = 1)
-public abstract class AppDataBase {
+public abstract class AppDataBase extends androidx.room.RoomDatabase{
 
     public abstract AppDao appDao();
 
@@ -24,7 +25,7 @@ public abstract class AppDataBase {
 
         if(appDataBase == null){
             appDataBase = Room.databaseBuilder(context, AppDataBase.class, "app.db")
-                    .fallbackToDestructiveMigration()
+                     .fallbackToDestructiveMigration()
                      .addCallback(new RoomDatabase.Callback() {
                          @Override
                          public void onCreate(@NonNull SupportSQLiteDatabase db) {
@@ -42,8 +43,13 @@ public abstract class AppDataBase {
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
-                appDataBase.appDao().insertarUsuario((Database) new Usuario("admin","admin"));
+               appDataBase.appDao().insertarUsuario(new Usuario("admin","admin"));
             }
         });
     }
+
+//    private static void leerUsuario(){
+//        AsyncTask.execute(new Callable<Usuario>())
+//        });
+//    }
 }

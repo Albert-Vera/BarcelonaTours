@@ -122,7 +122,6 @@ public class TourListFragment extends Fragment  {
 //                    holder.imageItem.setVisibility(View.GONE);
                 }
 //
-//
 //                holder.imageItem.setOnTouchListener(new View.OnTouchListener() {
 //                    @Override
 //                    public boolean onTouch(View v, MotionEvent event) {
@@ -135,10 +134,7 @@ public class TourListFragment extends Fragment  {
 //                                .show();
 //                        return true;
 //                    }
-//
-//
-//                });
-
+//              });
 
             holder.imageItem.setOnClickListener(new View.OnClickListener() {
                 @Override

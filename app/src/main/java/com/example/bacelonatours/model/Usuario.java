@@ -9,14 +9,15 @@ public class Usuario {
     @PrimaryKey(autoGenerate = true)
     public  int id;
 
-
-    public String userName, password;
-
     public Usuario() {
     }
 
-    public Usuario(String userName, String password) {
-        this.userName = userName;
+    public String email, password;
+
+
+
+    public Usuario(String email, String password) {
+        this.email = email;
         this.password = password;
     }
 }

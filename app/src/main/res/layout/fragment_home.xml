@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:background="@color/White"
+    android:background="@color/White"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomeFragment">
 
@@ -84,9 +84,10 @@ android:background="@color/White"
         android:focusable="false"
         android:ellipsize="marquee"
         android:marqueeRepeatLimit="marquee_forever"
-        android:text="BROWSE OUR TOURS       LET'S GO BESPOKE       INCENTIVES BARCELONA       BARCELONA FOOD TOURS       BLOG: TIPS  IDEAS       TOURISM IN BARCELONA       CONTACT"
+        android:text="Les nostres rutas       Activitats d'empresa       Descobreix el món gastronómic a Barcelona       Tallers artesanals       Visites a mida       Blog: ideas i propostes"
         android:layout_marginVertical="210dp"
         android:textSize="14dp"
+        android:textAlignment="center"
         />
 
     <Button

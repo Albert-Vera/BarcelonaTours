@@ -4,65 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@+id/homeFragment">
+
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.bacelonatours.HomeFragment"
         android:label="   "
-
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_tourListFragment"
-            app:destination="@id/tourListFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_login"
-            app:destination="@id/login" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/tourListFragment"
         android:name="com.example.bacelonatours.TourListFragment"
         android:label="    "
-        tools:layout="@layout/fragment_tour_list" >
-        <action
-            android:id="@+id/action_tourListFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_tour_list" />
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.bacelonatours.DetailFragment"
         android:label="  "
         tools:layout="@layout/fragment_detail" />
     <fragment
-        android:id="@+id/galeryFotos"
-        android:name="com.example.bacelonatours.galeryFotos"
-        android:label="fragment_galery_fotos"
+        android:id="@+id/galeryFotosFragment"
+        android:name="com.example.bacelonatours.GaleryFotosFragment"
+        android:label="Top Ventas"
         tools:layout="@layout/fragment_galery_fotos" />
     <fragment
-        android:id="@+id/login"
-        android:name="com.example.bacelonatours.Login"
+        android:id="@+id/loginFragment"
+        android:name="com.example.bacelonatours.LoginFragment"
         android:label=""
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_login_to_registrarse"
-            app:destination="@id/registrarse" />
-    </fragment>
+        tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/registrarse"
-        android:name="com.example.bacelonatours.registrarse"
-        android:label="fragment_registrarse"
+        android:name="com.example.bacelonatours.RegistrarseFragment"
+        android:label=""
         tools:layout="@layout/fragment_registrarse" />
     <fragment
         android:id="@+id/cerrarfragment"
-        android:name="com.example.bacelonatours.cerrarfragment"
-        android:label="fragment_cerrarfragment"
-        tools:layout="@layout/fragment_cerrarfragment" />
+        android:name="com.example.bacelonatours.CerrarFragment"
+        android:label=""
+        tools:layout="@layout/fragment_cerrar_fragment" />
     <fragment
         android:id="@+id/contacto"
-        android:name="com.example.bacelonatours.contacto"
-        android:label="fragment_contacto"
+        android:name="com.example.bacelonatours.ContactoFragment"
+        android:label=""
         tools:layout="@layout/fragment_contacto" />
     <fragment
         android:id="@+id/verperfilfragment"
-        android:name="com.example.bacelonatours.verperfilfragment"
-        android:label="fragment_verperfilfragment"
-        tools:layout="@layout/fragment_verperfilfragment" />
+        android:name="com.example.bacelonatours.VerPerfilFragment"
+        android:label=""
+        tools:layout="@layout/fragment_ver_perfil" />
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.example.bacelonatours.emailFragment"
+        android:label="fragment_email"
+        tools:layout="@layout/fragment_email" />
 </navigation>

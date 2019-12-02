@@ -1,7 +1,6 @@
 package com.example.bacelonatours;
 
 
-import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
@@ -20,12 +19,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.sunfusheng.marqueeview.MarqueeView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 
 
 /**
@@ -68,12 +66,13 @@ public class HomeFragment extends Fragment {
                                 "Por qué Tocas !", Toast.LENGTH_SHORT);
                 toast1.setGravity(Gravity.CENTER|Gravity.LEFT,250,0);
                 toast1.show();
+
             }
         });
         view.findViewById(R.id.loginHome).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.login);
+                Navigation.findNavController(view).navigate(R.id.loginFragment);
             }
         });
 
@@ -99,12 +98,12 @@ public class HomeFragment extends Fragment {
                             // TEXTO DE LA IMAGENHOME CON MOVIMIENTO
         MarqueeView marqueeView = (MarqueeView) view.findViewById(R.id.marqueeView);
         List<String> listText = new ArrayList<>();
-        listText.add("  Barcelona Local Guide");
-        listText.add("   Food And Wine Tours ");
-        listText.add("        Barcelona ahoy    ");
-        listText.add(" Discover Gaudi's Univers ");
-        listText.add(" Live a cultural Inmmersion");
-        listText.add("   Your Private Guide");
+        listText.add("          Visites Guiades       ");
+        listText.add("           Gastronomia          ");
+        listText.add("          Immersió cultural      ");
+        listText.add("Descobreix l'univers Gaudi ");
+        listText.add("         Tallers artesanals     ");
+        listText.add("       Guia Privat a Barcelona  ");
 
         marqueeView.startWithList(listText);
 

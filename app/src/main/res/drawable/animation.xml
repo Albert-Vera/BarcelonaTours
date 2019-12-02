@@ -8,7 +8,8 @@
     <item android:drawable="@drawable/img2" android:duration="2000" />
     <item android:drawable="@drawable/img3" android:duration="2000" />
     <item android:drawable="@drawable/img4" android:duration="2000" />
-
+    <item android:drawable="@drawable/miro" android:duration="2000" />
+    <item android:drawable="@drawable/guell" android:duration="2000" />
 <!--    <item android:drawable="@drawable/anim6" android:duration="1000" />-->
 <!--    <item android:drawable="@drawable/anim7" android:duration="1000" />-->
 <!--    <item android:drawable="@drawable/anim8" android:duration="1000" />-->

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_gradient"
+    tools:context=".VerPerfilFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="260dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="100dp"
+
+
+            android:src="@drawable/logobarcelonia">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/verperfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REGISTRE COMPLETAT"
+            android:textColor="@color/White"
+            android:textAlignment="center"
+            android:layout_marginVertical="100dp"
+            android:textSize="26dp">
+
+        </TextView>
+    </LinearLayout>
+</FrameLayout>
