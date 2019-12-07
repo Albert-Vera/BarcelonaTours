@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //getSupportActionBar().hide();
@@ -35,9 +36,11 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.homeFragment, R.id.tourListFragment, R.id.detailFragment,
-                R.id.loginFragment, R.id.contacto, R.id.registrarse, R.id.verperfilfragment)
+                R.id.loginFragment, R.id.contactoFragment, R.id.registrarseFragment, R.id.verperfilfragment,
+                R.id.rutas_a_midaFragment, R.id.gastronomiaFragment , R.id.bloc_ideas_i_propostasFragment,R.id.activitats_de_empresaFragment)
                 .setDrawerLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);

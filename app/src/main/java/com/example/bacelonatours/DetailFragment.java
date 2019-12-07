@@ -29,8 +29,8 @@ public class DetailFragment extends Fragment {
     MainViewModel mainViewModel;
 
     private TextView titulo, descripcion, explain;
-    private Button interesaButton;
-    private ImageView imagenDetail;
+
+    private ImageView imagenDetail, imgFavoritos;
     RatingBar ratingBar;
 
     int prefs;
@@ -51,23 +51,6 @@ public class DetailFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        ratingBar = view.findViewById(R.id.ratingBar);
-//        ratingBar.setRating(prefs.getFloat("RATINGBAR", 0));
-//
-//        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-//            @Override
-//            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-//                prefs.edit().putFloat("RATINGBAR", v);
-//            }
-//        });
-
-//        RatingBar simpleRatingBar = (RatingBar) view.findViewById(R.id.ratingBar); // initiate a rating bar
-//        Float ratingNumber = simpleRatingBar.getRating(); // get rating number from a rating bar
-//        //simpleRatingBar.setBackgroundColor(Color.RED); // set background color for a rating bar
-//        int numberOfStars = simpleRatingBar.getNumStars(); // get total number of stars of rating bar
-//        simpleRatingBar.setNumStars(4);
-
-
         ratingBar = view.findViewById(R.id.ratingBarxml);
         ratingBar.setNumStars(5);
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -87,7 +70,14 @@ public class DetailFragment extends Fragment {
         descripcion = view.findViewById(R.id.tourResource);
         explain = view.findViewById(R.id.tourExplain);
         imagenDetail = view.findViewById(R.id.imageDetail);
-        //SGD = new ScaleGestureDetector(requireActivity(), new ScaleListener());
+        view.findViewById(R.id.favoritos).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO aqui variable sumarle puntos a imageDetail
+            }
+        });
+
+
         mainViewModel.tour.observe(getViewLifecycleOwner(), new Observer<Tour>() {
             @Override
             public void onChanged(Tour tour) {
@@ -98,7 +88,7 @@ public class DetailFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 mainViewModel.quiereRegistrarse = true;
-                Navigation.findNavController(view).navigate(R.id.registrarse);
+                Navigation.findNavController(view).navigate(R.id.registrarseFragment);
             }
         });
 
@@ -108,7 +98,7 @@ public class DetailFragment extends Fragment {
         mainViewModel.obtenerTourDetail(tour.tourId).observe(getViewLifecycleOwner(), new Observer<TourDetail>() {
             @Override
             public void onChanged(TourDetail tourDetail) {
-                Log.e("ABCD", " lalacosa " + tourDetail.tourDescription);
+                Log.e("ABCD", " lalacosa " + tourDetail.tourId);
                 titulo.setText(tourDetail.tourName);
                 Glide.with(requireActivity()).load(tourDetail.tourImage).into(imagenDetail);
                 descripcion.setText(tourDetail.tourDescription);

@@ -31,7 +31,7 @@
         android:label=""
         tools:layout="@layout/fragment_login" />
     <fragment
-        android:id="@+id/registrarse"
+        android:id="@+id/registrarseFragment"
         android:name="com.example.bacelonatours.RegistrarseFragment"
         android:label=""
         tools:layout="@layout/fragment_registrarse" />
@@ -41,7 +41,7 @@
         android:label=""
         tools:layout="@layout/fragment_cerrar_fragment" />
     <fragment
-        android:id="@+id/contacto"
+        android:id="@+id/contactoFragment"
         android:name="com.example.bacelonatours.ContactoFragment"
         android:label=""
         tools:layout="@layout/fragment_contacto" />
@@ -55,4 +55,24 @@
         android:name="com.example.bacelonatours.emailFragment"
         android:label="fragment_email"
         tools:layout="@layout/fragment_email" />
+    <fragment
+        android:id="@+id/rutas_a_midaFragment"
+        android:name="com.example.bacelonatours.visites_a_midaFragment"
+        android:label="fragment_rutas_a_mida"
+        tools:layout="@layout/visites_fragment" />
+    <fragment
+        android:id="@+id/activitats_de_empresaFragment"
+        android:name="com.example.bacelonatours.activitats_de_empresaFragment"
+        android:label="fragment_activitats_de_empresa"
+        tools:layout="@layout/fragment_activitats_de_empresa" />
+    <fragment
+        android:id="@+id/bloc_ideas_i_propostasFragment"
+        android:name="com.example.bacelonatours.bloc_ideas_i_propostasFragment"
+        android:label="fragment_bloc_ideas_i_propostas"
+        tools:layout="@layout/fragment_bloc_ideas_i_propostas" />
+    <fragment
+        android:id="@+id/gastronomiaFragment"
+        android:name="com.example.bacelonatours.gastronomiaFragment"
+        android:label="fragment_gastronomia"
+        tools:layout="@layout/fragment_gastronomia" />
 </navigation>

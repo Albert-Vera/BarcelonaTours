@@ -1,6 +1,8 @@
 package com.example.bacelonatours;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +13,9 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.text.SpannableString;
+import android.text.TextUtils;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +33,7 @@ public class RegistrarseFragment extends Fragment {
 
     NavController navController;
     MainViewModel mainViewModel;
-    TextView noRegistrar;
+    TextView noRegistrar, phone;
     Usuario usuario;
     EditText emailEditText, passwordEditText;
 
@@ -62,7 +67,7 @@ public class RegistrarseFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
 
-                    Navigation.findNavController(view).navigate(R.id.contacto);
+                    Navigation.findNavController(view).navigate(R.id.contactoFragment);
                 }
             });
             mainViewModel.quiereRegistrarse = false;
@@ -70,7 +75,21 @@ public class RegistrarseFragment extends Fragment {
             noRegistrar = view.findViewById(R.id.noregistrarme);
             noRegistrar.setVisibility(TextView.GONE);
         }
-
+        view.findViewById(R.id.phoneRegister).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phoneNo = "667111222";
+                if(!TextUtils.isEmpty(phoneNo)) {
+                    String dial = "tel:" + phoneNo;
+                    startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(dial)));
+                }
+            }
+        });
+        //  SUBRAYAR TEXTO phone
+        phone = view.findViewById(R.id.phoneRegister);
+        SpannableString subrallarPhone = new SpannableString("666 333 222");
+        subrallarPhone.setSpan(new UnderlineSpan(), 0, subrallarPhone.length(), 0);
+        phone.setText(subrallarPhone);
 
         view.findViewById(R.id.registerboton).setOnClickListener(new View.OnClickListener() {
             @Override

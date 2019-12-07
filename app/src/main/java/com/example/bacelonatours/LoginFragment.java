@@ -74,7 +74,7 @@ public class LoginFragment extends Fragment  {
         view.findViewById(R.id.iraregistro).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.registrarse);
+                navController.navigate(R.id.registrarseFragment);
 
 
             }

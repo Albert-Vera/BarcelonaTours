@@ -1,0 +1,50 @@
+{
+  "tours": [
+    {
+      "tourId": "t1",
+      "tourName": "Barcelona",
+      "tourImages": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/raval.jpg"
+
+
+    },
+    {
+      "tourId": "t2",
+      "tourName": "cosas",
+      "tourImages": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/gotic.jpg"
+
+
+    },
+
+
+    {
+      "tourId": "t3",
+      "tourName": "mas cosas",
+      "tourImages": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imgt2.jpg"
+
+
+    },
+    {
+      "tourId": "t4",
+      "tourName": "cosas",
+      "tourImages": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imagenes/jamon.jpg"
+
+
+    },
+
+
+    {
+      "tourId": "t5",
+      "tourName": "mas cosas",
+      "tourImages": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/artfemeni.jpg"
+
+
+    },
+    {
+      "tourId": "t6",
+      "tourName": "otro",
+      "tourImages": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/artfemeni.jpg"
+
+
+    }
+  ]
+}

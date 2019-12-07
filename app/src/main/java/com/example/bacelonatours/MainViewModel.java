@@ -61,6 +61,24 @@ public class MainViewModel extends AndroidViewModel {
         return apiResponse;
     }
 
+    public LiveData<BarceloninaResponse> obtenerGalleria(){
+        final MutableLiveData<BarceloninaResponse> apiResponse = new MutableLiveData<>();
+
+        try {
+            Gson gson = new Gson();
+            InputStream raw =  application.getResources().openRawResource(R.raw.galeria);
+            Reader rd = new BufferedReader(new InputStreamReader(raw));
+            BarceloninaResponse data = gson.fromJson(rd, BarceloninaResponse.class);
+
+            apiResponse.setValue(data);
+
+        }catch (Exception e){
+            Log.e("ABCD", "Exception" + e.getMessage());
+        }
+
+        return apiResponse;
+    }
+
 
     public LiveData<TourDetail> obtenerTourDetail(String tourId){
         final MutableLiveData<TourDetail> apiResponse = new MutableLiveData<>();

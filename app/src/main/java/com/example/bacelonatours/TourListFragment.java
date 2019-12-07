@@ -42,7 +42,7 @@ public class TourListFragment extends Fragment  {
 
     TourAdapter tourAdapter;
     MainViewModel mainViewModel;
-    List<Tour> tourList = new ArrayList<>();
+
 
     public TourListFragment() {}
 
@@ -68,28 +68,16 @@ public class TourListFragment extends Fragment  {
         mainViewModel.obtenerTours().observe(this, new Observer<BarceloninaResponse>() {
             @Override
             public void onChanged(BarceloninaResponse barceloninaResponse) {
-                tourList =  barceloninaResponse.tours;
-                tourAdapter.notifyDataSetChanged();
+                tourAdapter.establecerListaTours(barceloninaResponse.tours);
             }
         });
     }
 
-    class TourViewHolder extends RecyclerView.ViewHolder {
-        TextView name, desc;
-        ImageView imageItem;
-
-        TourViewHolder(@NonNull View itemView) {
-            super(itemView);
-            name = itemView.findViewById(R.id.tour_name);
-            desc = itemView.findViewById(R.id.textImage);
 
 
-            imageItem = itemView.findViewById(R.id.tour_image);
+    class TourAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHolder>{
 
-        }
-    }
-
-    class TourAdapter extends RecyclerView.Adapter<TourViewHolder>{
+        List<Tour> tourList = new ArrayList<>();
 
         @NonNull
         @Override
@@ -106,10 +94,6 @@ public class TourListFragment extends Fragment  {
             holder.desc.setText(tour.tourDescription);
             Log.e("ABCD", " lala " + tour.tourImages);
             Glide.with(requireActivity()).load(tour.tourImages).into(holder.imageItem);
-
-
-
-
 
 
                 if (tour.tourName != null) {
@@ -152,6 +136,26 @@ public class TourListFragment extends Fragment  {
         @Override
         public int getItemCount() {
             return tourList.size();
+        }
+
+        void establecerListaTours(List<Tour> t){
+            tourList = t;
+            notifyDataSetChanged();
+        }
+
+        class TourViewHolder extends RecyclerView.ViewHolder {
+            TextView name, desc;
+            ImageView imageItem;
+
+            TourViewHolder(@NonNull View itemView) {
+                super(itemView);
+                name = itemView.findViewById(R.id.tour_name);
+                desc = itemView.findViewById(R.id.textImage);
+
+
+                imageItem = itemView.findViewById(R.id.tour_image);
+
+            }
         }
     }
 }

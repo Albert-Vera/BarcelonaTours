@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:fillViewport="true">
-
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".gastronomiaFragment">
 
 
     <LinearLayout
@@ -16,7 +15,7 @@
 
 
         <TextView
-            android:id="@+id/detail"
+            android:id="@+id/text_gatronomia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="5dp"
@@ -28,7 +27,7 @@
 
 
             <ImageView
-                android:id="@+id/imageDetail"
+                android:id="@+id/imageGastronomia"
                 android:layout_width="355dp"
                 android:layout_height="230dp"
                 android:padding="10dp"
@@ -43,7 +42,7 @@
             </ImageView>
 
             <Button
-                android:id="@+id/favoritos"
+                android:id="@+id/favoritosGastronomia"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="16dp"
@@ -59,39 +58,7 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/Raro"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp">
 
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="Valoracions "
-                android:textSize="18dp"
-                android:layout_marginVertical="20dp">
-            </TextView>
-
-            <RatingBar
-                android:id="@+id/ratingBarxml"
-                android:layout_width="264dp"
-                android:layout_height="46dp"
-                android:scaleX="0.7"
-                android:scaleY="0.7"
-                android:transformPivotX="25dp"
-                android:transformPivotY="35dp">
-            </RatingBar>
-
-
-
-        </LinearLayout>
 
 
         <GridLayout
@@ -131,7 +98,7 @@
                     android:layout_column="0">
 
                     <TextView
-                        android:id="@+id/tourResource"
+                        android:id="@+id/xxxx"
 
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -141,10 +108,11 @@
                         android:textSize="18sp"
                         android:textStyle="bold"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent">
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="InvalidId">
                     </TextView>
                     <TextView
-                        android:id="@+id/tourExplain"
+                        android:id="@+id/gatroxxxxx"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="60dp"
@@ -161,7 +129,7 @@
 
             </androidx.cardview.widget.CardView>
             <Button
-                android:id="@+id/meInteresa"
+                android:id="@+id/meInteresaaGastronomia"
                 android:layout_width="290dp"
                 android:layout_height="50dp"
 

@@ -6,8 +6,5 @@ public class Tour {
     public String tourId, tourName, tourDescription;
     //public List<String> tourImages;
     public String tourImages;
-    public String tourResource;
-
-
-
+    public String tourResource, valoracion;
 }
