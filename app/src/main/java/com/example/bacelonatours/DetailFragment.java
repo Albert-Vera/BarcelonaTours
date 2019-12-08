@@ -1,10 +1,12 @@
 package com.example.bacelonatours;
 
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -29,13 +31,13 @@ public class DetailFragment extends Fragment {
     MainViewModel mainViewModel;
 
     private TextView titulo, descripcion, explain;
-
-    private ImageView imagenDetail, imgFavoritos;
+    private Button imgFavoritos;
+    private ImageView imagenDetail ;
     RatingBar ratingBar;
 
     int prefs;
 
-    Tour tour;
+
 //    Matrix matrix = new Matrix();
 //    Float scale= 1f;
 //    ScaleGestureDetector SGD;
@@ -70,12 +72,25 @@ public class DetailFragment extends Fragment {
         descripcion = view.findViewById(R.id.tourResource);
         explain = view.findViewById(R.id.tourExplain);
         imagenDetail = view.findViewById(R.id.imageDetail);
-        view.findViewById(R.id.favoritos).setOnClickListener(new View.OnClickListener() {
+        imgFavoritos = view.findViewById(R.id.favoritos);
+        imgFavoritos.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
-                // TODO aqui variable sumarle puntos a imageDetail
+            public void onClick(View v) {
+                new AlertDialog.Builder(requireContext()).setTitle("\t\t                Afegit ")
+                        .setMessage("\t      A la teve llista de favorits")
+                        .setCancelable(true)
+                        .create()
+                        .show();
             }
+
         });
+
+
+
+
+        // TODO aqui variable sumarle puntos a imageDetail
+
 
 
         mainViewModel.tour.observe(getViewLifecycleOwner(), new Observer<Tour>() {

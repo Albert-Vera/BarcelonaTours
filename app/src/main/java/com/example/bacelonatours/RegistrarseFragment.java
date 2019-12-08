@@ -87,7 +87,7 @@ public class RegistrarseFragment extends Fragment {
         });
         //  SUBRAYAR TEXTO phone
         phone = view.findViewById(R.id.phoneRegister);
-        SpannableString subrallarPhone = new SpannableString("666 333 222");
+        SpannableString subrallarPhone = new SpannableString(" 666 333 222");
         subrallarPhone.setSpan(new UnderlineSpan(), 0, subrallarPhone.length(), 0);
         phone.setText(subrallarPhone);
 

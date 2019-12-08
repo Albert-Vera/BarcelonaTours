@@ -2,15 +2,15 @@
   "tours": [
     {
       "tourId": "t1",
-      "tourName": "Barcelona",
+      "tourName": "El Gòtic",
       "tourImages": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/raval.jpg"
 
 
     },
     {
       "tourId": "t2",
-      "tourName": "cosas",
-      "tourImages": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/gotic.jpg"
+      "tourName": "Art i Arquitectura",
+      "tourImages": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/artfemeni.jpg"
 
 
     },
@@ -18,14 +18,14 @@
 
     {
       "tourId": "t3",
-      "tourName": "mas cosas",
+      "tourName": "Gaudí",
       "tourImages": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imgt2.jpg"
 
 
     },
     {
       "tourId": "t4",
-      "tourName": "cosas",
+      "tourName": "Gastronomia",
       "tourImages": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/imagenes/jamon.jpg"
 
 
@@ -34,14 +34,14 @@
 
     {
       "tourId": "t5",
-      "tourName": "mas cosas",
-      "tourImages": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/artfemeni.jpg"
+      "tourName": "Rutas en Bicicleta",
+      "tourImages": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/bicicleta.jpg"
 
 
     },
     {
       "tourId": "t6",
-      "tourName": "otro",
+      "tourName": "Firas i Congresos",
       "tourImages": "https://raw.githubusercontent.com/Albertvedu/BacelonaTours/master/app/src/main/res/raw/artfemeni.jpg"
 
 

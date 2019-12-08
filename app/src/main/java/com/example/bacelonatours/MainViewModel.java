@@ -100,6 +100,26 @@ public class MainViewModel extends AndroidViewModel {
 
         return apiResponse;
     }
+//    public LiveData<Tour> obtenerGastronomia(String tourId){
+//        final MutableLiveData<Tour> apiResponse = new MutableLiveData<>();
+//
+//        try {
+//            Gson gson = new Gson();
+//
+//            int resourceId = application.getResources().getIdentifier(tourId, "raw", "com.example.bacelonatours");
+//
+//            InputStream raw =  application.getResources().openRawResource(resourceId);
+//            Reader rd = new BufferedReader(new InputStreamReader(raw));
+//            gastronomiaFragment data = gson.fromJson(rd, gastronomiaFragment.class);
+//
+//            apiResponse.setValue(data);
+//
+//        }catch (Exception e){
+//            Log.e("ABCD", "Exception" + e.getMessage());
+//        }
+//
+//        return apiResponse;
+//    }
 
     public void resgistrarUsuario(final String email, final String password){
 

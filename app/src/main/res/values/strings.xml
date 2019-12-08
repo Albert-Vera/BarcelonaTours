@@ -17,13 +17,13 @@
     <string name="action_settings">Settings</string>
     <string name="explorar_tours">Explorar les Notres Rutas</string>
     <string name="menu_opcio8">Galeria de Fotos</string>
-    <string name="menu_opcio7">Tours Preferits</string>
+    <string name="menu_opcio7">La Meva Localització</string>
     <string name="menu_opcio1">Les Nostres Rutes</string>
     <string name="menu_opcio2">Visites a Mida</string>
     <string name="menu_opcio3">"Activitats d'empresa"</string>
     <string name="menu_opcio4">"Bloc: Idees i Consells"</string>
     <string name="menu_opcio5">Busques la Ruta Perfecte</string>
-    <string name="menu_opcio6">Tour Gastronòmic Barcelona</string>
+    <string name="menu_opcio6">Especial Gastronomia</string>
     <string name="menu_opcio9">Contact</string>
 
     <string name="detailpreu">180 euros</string>
@@ -32,6 +32,7 @@
     <string name="hacer_reserva">Reservar Tour </string>
     <string name="reservar_fecha">Quiero resevar para: </string>
     <string name="graciaspor">Registre correcta </string>
+    <string name="emailSending">Transfering your Email </string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

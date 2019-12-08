@@ -2,6 +2,8 @@ package com.example.bacelonatours;
 
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,11 +15,15 @@ import androidx.navigation.ActionOnlyNavDirections;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.text.SpannableString;
+import android.text.TextUtils;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.bacelonatours.model.Usuario;
 
@@ -29,6 +35,7 @@ public class LoginFragment extends Fragment  {
 
     EditText emailLogin, password;
     MainViewModel mainViewModel;
+    TextView phone;
     Usuario usuario;
     NavController navController;
 
@@ -48,7 +55,21 @@ public class LoginFragment extends Fragment  {
 
         emailLogin = view.findViewById(R.id.email_login);
         password = view.findViewById(R.id.password_login);
-
+        view.findViewById(R.id.phoneLogin).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phoneNo = "667111222";
+                if(!TextUtils.isEmpty(phoneNo)) {
+                    String dial = "tel:" + phoneNo;
+                    startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(dial)));
+                }
+            }
+        });
+        //  SUBRAYAR TEXTO phone
+        phone = view.findViewById(R.id.phoneLogin);
+        SpannableString subrallarPhone = new SpannableString(" 666 333 222");
+        subrallarPhone.setSpan(new UnderlineSpan(), 0, subrallarPhone.length(), 0);
+        phone.setText(subrallarPhone);
 
         view.findViewById(R.id.loginboton).setOnClickListener(new View.OnClickListener() {
             @Override

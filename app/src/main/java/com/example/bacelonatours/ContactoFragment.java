@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +28,7 @@ public class ContactoFragment extends Fragment {
 
     DatePicker datePicker1;
     SharedPreferences prefs;
+    NavController navController;
 
     public ContactoFragment() {
         // Required empty public constructor
@@ -42,6 +45,19 @@ public class ContactoFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(view);
+
+        view.findViewById(R.id.enviarReserva).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.cerrarfragment);
+            }
+        });
+
+
+
+
+
         //prefs = getPreferences(MODE_PRIVATE);
 
 //        datePicker1 = view.findViewById(R.id.datePicker1);

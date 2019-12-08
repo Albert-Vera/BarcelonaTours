@@ -98,35 +98,16 @@ public class TourListFragment extends Fragment  {
 
                 if (tour.tourName != null) {
                     holder.name.setText(tour.tourName);
-                    //Glide.with(requireActivity()).load(tour.tourImages.get(i)).into(holder.imagenArray);
-                   // Glide.with(requireActivity()).load(tour.tourImages).into(holder.imageItem);
+
                 } else {
                     holder.name.setVisibility(TextView.GONE);
-//                    holder.desc.setVisibility(TextView.GONE);
-//                    holder.imageItem.setVisibility(View.GONE);
                 }
-//
-//                holder.imageItem.setOnTouchListener(new View.OnTouchListener() {
-//                    @Override
-//                    public boolean onTouch(View v, MotionEvent event) {
-//                        mainViewModel.tourId = tour.tourId;
-//                        String s = "POR QUÉ TOCAS ?";
-//                        new AlertDialog.Builder(requireContext()).setTitle(tour.tourName)
-//                                .setMessage("precio tal y cual")
-//                                .setCancelable(true)
-//                                .create()
-//                                .show();
-//                        return true;
-//                    }
-//              });
+
 
             holder.imageItem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     mainViewModel.tour.setValue(tour);
-//                    Snackbar snackbar = Snackbar
-//                            .make(requireView(), "Mensaje a mostrar", Snackbar.LENGTH_LONG);
-//                    snackbar.show();
 
                     Navigation.findNavController(view).navigate(R.id.detailFragment);
                 }

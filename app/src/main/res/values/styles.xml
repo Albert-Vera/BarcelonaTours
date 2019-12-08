@@ -21,5 +21,8 @@
     <style name="AppTheme.RoundedCornerMaterialButton" parent="Widget.AppCompat.Button.Colored">
         <item name="android:background">@drawable/rounded_shape</item>
     </style>
+    <style name="AppTheme.iconoDetailMaterialButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/icono_detail</item>
+    </style>
 
 </resources>

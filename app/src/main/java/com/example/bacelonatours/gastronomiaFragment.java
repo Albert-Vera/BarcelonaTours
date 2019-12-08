@@ -50,8 +50,9 @@ public class gastronomiaFragment extends Fragment {
         titulo = view.findViewById(R.id.text_gastronomia);
         descripcion = view.findViewById(R.id.description_gastronomia);
         explain = view.findViewById(R.id.gatroxxxxx);
-        mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
         imageVisiteAMida = view.findViewById(R.id.imageGastronomia);
+
+        mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
         mainViewModel.tour.observe(getViewLifecycleOwner(), new Observer<Tour>() {
             @Override
             public void onChanged(Tour tour) {
@@ -62,12 +63,12 @@ public class gastronomiaFragment extends Fragment {
     }
 
     private void mostrarVisitesaMide(Tour tour) {
-        mainViewModel.obtenerTourDetail("t8").observe(getViewLifecycleOwner(), new Observer<TourDetail>() {
+        mainViewModel.obtenerTourDetail("t10").observe(getViewLifecycleOwner(), new Observer<TourDetail>() {
             @Override
             public void onChanged(TourDetail tourDetail) {
                 Log.e("ABCD", " lalacosa 1" + tourDetail.tourId );
                 titulo.setText(tourDetail.tourName);
-                Glide.with(requireActivity()).load(R.drawable.arctriomf).into(imageVisiteAMida);
+                Glide.with(requireActivity()).load(R.drawable.sopar).into(imageVisiteAMida);
                 descripcion.setText(tourDetail.tourDescription);
                 explain.setText(tourDetail.tourExplain);
             }

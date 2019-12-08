@@ -20,7 +20,8 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="5dp"
             android:textAlignment="center"
-            android:textSize="28dp" />
+            android:textColor="@color/Negre"
+            android:textSize="21dp" />
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -43,16 +44,15 @@
 
             <Button
                 android:id="@+id/favoritosGastronomia"
-                android:layout_width="40dp"
+                android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_marginStart="16dp"
                 android:layout_marginBottom="28dp"
 
                 android:background="#00000000"
 
                 android:drawableBottom="@drawable/ic_thumb_up_black_24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/imageDetail">
+                app:layout_constraintStart_toStartOf="@+id/imageGastronomia">
 
             </Button>
 
@@ -106,7 +106,7 @@
                         android:layout_margin="15dp"
                         android:textColor="@color/Negre"
                         android:textSize="18sp"
-                        android:textStyle="bold"
+
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         tools:ignore="InvalidId">

@@ -9,18 +9,18 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/galeryFotosFragment"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_mes_valorats" />
+            android:id="@+id/emailFragment"
+            android:icon="@drawable/ic_email_black_24dp"
+            android:title="@string/menu_opcio9" />
     </group>
 
     <item >
         <menu>
-
             <item
-                android:id="@+id/emailFragment"
+                android:id="@+id/galeryFotosFragment"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/menu_mes_valorats" />
 
-                android:title="@string/menu_opcio9" />
             <item
                 android:id="@+id/tourListFragment"
 
@@ -30,29 +30,13 @@
 
                 android:title="@string/menu_opcio2" />
             <item
-                android:id="@+id/menuopcio3"
-
-                android:title="@string/menu_opcio3" />
-            <item
-                android:id="@+id/menuopcio4"
-
-                android:title="@string/menu_opcio4" />
-            <item
-                android:id="@+id/menuopcio5"
-
-                android:title="@string/menu_opcio5" />
-            <item
                 android:id="@+id/gastronomiaFragment"
 
                 android:title="@string/menu_opcio6" />
             <item
-                android:id="@+id/menuopcio7"
+                android:id="@+id/myLocationFragment"
 
                 android:title="@string/menu_opcio7" />
-            <item
-                android:id="@+id/menuopcio8"
-
-                android:title="@string/menu_opcio8" />
 
         </menu>
     </item>
