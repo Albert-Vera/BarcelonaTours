@@ -24,6 +24,8 @@ import com.example.bacelonatours.model.TourDetail;
 /**
  * A simple {@link Fragment} subclass.
  */
+// TODO esta clase revisala... esta anulada pero cosas
+
 public class gastronomiaFragment extends Fragment {
 
     private ImageView imageVisiteAMida;

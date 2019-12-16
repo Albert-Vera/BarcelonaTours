@@ -4,18 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Raro"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".TourListFragment">
+    tools:context=".LoginOutFragment">
 
-
-
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/itemList"
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        android:layout_height="match_parent"
+        android:text="blank_fragment" />
 
 </FrameLayout>

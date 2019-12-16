@@ -20,8 +20,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.bacelonatours.model.Usuario;
 
@@ -31,9 +33,11 @@ import com.example.bacelonatours.model.Usuario;
  */
 public class RegistrarseFragment extends Fragment {
 
+    private AutenticacionViewModel autenticacionViewModel;
     NavController navController;
     MainViewModel mainViewModel;
     TextView noRegistrar, phone;
+    private Button registrarButton;
     Usuario usuario;
     EditText emailEditText, passwordEditText;
 
@@ -50,15 +54,16 @@ public class RegistrarseFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        navController = Navigation.findNavController(view);
+        //navController = Navigation.findNavController(view);
 
         mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
         emailEditText = view.findViewById(R.id.email_registrarse);
         passwordEditText = view.findViewById(R.id.password_registrarse);
-        navController = Navigation.findNavController(view);
+        registrarButton = view.findViewById(R.id.registerboton);
+       // navController = Navigation.findNavController(view);
 
 
         if (mainViewModel.quiereRegistrarse ) { // VIENE DE DETAILFRAMENT "BOTON ME INTERESA"
@@ -67,7 +72,7 @@ public class RegistrarseFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
 
-                    Navigation.findNavController(view).navigate(R.id.contactoFragment);
+                    Navigation.findNavController(view).navigate(R.id.reservarTourFragment);
                 }
             });
             mainViewModel.quiereRegistrarse = false;
@@ -75,54 +80,43 @@ public class RegistrarseFragment extends Fragment {
             noRegistrar = view.findViewById(R.id.noregistrarme);
             noRegistrar.setVisibility(TextView.GONE);
         }
-        view.findViewById(R.id.phoneRegister).setOnClickListener(new View.OnClickListener() {
+
+
+        autenticacionViewModel = ViewModelProviders.of(requireActivity()).get(AutenticacionViewModel.class);
+
+        // Poner el estado del registro al estado INICIAR,
+        // (por si se habia quedado en COMPLETADO o NOMBRE_NO_DISPONIBLE)
+        autenticacionViewModel.iniciarRegistro();
+
+        registrarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String phoneNo = "667111222";
-                if(!TextUtils.isEmpty(phoneNo)) {
-                    String dial = "tel:" + phoneNo;
-                    startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(dial)));
+                autenticacionViewModel.crearCuentaEIniciarSesion(emailEditText.getText().toString(), passwordEditText.getText().toString());
+            }
+        });
+
+        autenticacionViewModel.estadoDelRegistro.observe(getViewLifecycleOwner(), new Observer<AutenticacionViewModel.EstadoDelRegistro>() {
+            @Override
+            public void onChanged(AutenticacionViewModel.EstadoDelRegistro estadoDelRegistro) {
+                switch (estadoDelRegistro){
+                    case NOMBRE_NO_DISPONIBLE:
+                        Toast.makeText(getContext(), "NOMBRE DE USUARIO NO DISPONIBLE", Toast.LENGTH_SHORT).show();
+                        break;
                 }
             }
         });
-        //  SUBRAYAR TEXTO phone
-        phone = view.findViewById(R.id.phoneRegister);
-        SpannableString subrallarPhone = new SpannableString(" 666 333 222");
-        subrallarPhone.setSpan(new UnderlineSpan(), 0, subrallarPhone.length(), 0);
-        phone.setText(subrallarPhone);
 
-        view.findViewById(R.id.registerboton).setOnClickListener(new View.OnClickListener() {
+        autenticacionViewModel.estadoDeLaAutenticacion.observe(getViewLifecycleOwner(), new Observer<AutenticacionViewModel.EstadoDeLaAutenticacion>() {
             @Override
-            public void onClick(View view) {
-                int rellenadoformulario = 0;
-                String email = emailEditText.getText().toString();
-                String password = passwordEditText.getText().toString();
-                usuario = new Usuario(email, password);
-
-                emailEditText.setError("Introdueix el teu email");
-                passwordEditText.setError("Introdueix una contrasenya");
-
-                if (!usuario.email.isEmpty()){  rellenadoformulario ++; }
-
-                if (!usuario.password.isEmpty()){  rellenadoformulario ++; }
-
-                if (rellenadoformulario == 2) {
-                    mainViewModel.resgistrarUsuario(usuario.email, usuario.password);
-                    mainViewModel.usuarioNoDisponible.observe(getViewLifecycleOwner(), new Observer<Boolean>() {
-                        @Override
-                        public void onChanged(Boolean existeUsuario) {
-                            // aqui impremir que usuario disponible o no disponible
-                            if (existeUsuario) {
-                                Log.e("ABCD", " toy aqui condicional exiteUsuario " + usuario.email);
-                                navController.navigate(R.id.verperfilfragment);
-                            }
-
-                        }
-                    });
-
-                    Log.e("ABCD", " toy aqui en verPerfil de vuelta " + usuario.email);
+            public void onChanged(AutenticacionViewModel.EstadoDeLaAutenticacion estadoDeLaAutenticacion) {
+                switch (estadoDeLaAutenticacion){
+                    case AUTENTICADO:
+                        Log.e("ABCD", " toy aqui Usuario toy en Autentificado .. " );
+                        //Navigation.findNavController(view).popBackStack();
+                        break;
                 }
             }
         });
+
     }
 }

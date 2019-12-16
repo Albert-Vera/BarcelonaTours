@@ -1,6 +1,7 @@
 package com.example.bacelonatours;
 
 
+import android.app.AlertDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -9,11 +10,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.bacelonatours.db.AppDao;
@@ -25,9 +28,10 @@ import com.example.bacelonatours.model.Usuario;
  */
 public class VerPerfilFragment extends Fragment {
 
-    TextView usuarioText;
-    MainViewModel mainViewModel;
-    Usuario usuario ;
+
+    private AutenticacionViewModel autenticacionViewModel;
+    private Button buttonContinuar, buttonCerrarSesion;
+    private TextView textoLogeadoOk, usuarioText;
 
 
     public VerPerfilFragment() {
@@ -43,30 +47,51 @@ public class VerPerfilFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        usuarioText = view.findViewById(R.id.verperfil);
-        mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
-        usuario = new Usuario();
 
-  //      mainViewModel.leerUltimoRegistro();
 
-        mainViewModel.usuario.observe(getViewLifecycleOwner(), new Observer<Usuario>() {
+        autenticacionViewModel = ViewModelProviders.of(requireActivity()).get(AutenticacionViewModel.class);
 
+       // nombreEditText = view.findViewById(R.id.verperfil);
+
+        textoLogeadoOk = view.findViewById(R.id.textoLogeador);
+        view.findViewById(R.id.continuarLogeao).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onChanged(Usuario usuario) {
-                Log.e("ABCD", " toy aqui en verPerfil no entra ni en broma " + usuario.email);
-                mostrarDetallePerfil(usuario);
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.homeFragment);
+            }
+        });
+        view.findViewById(R.id.cerrarSessioButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                autenticacionViewModel.cerrarSesion();
+                mostrarCerrarSesion();
+                Navigation.findNavController(view).navigate(R.id.homeFragment);
             }
         });
 
 
     }
 
-    public void mostrarDetallePerfil(Usuario usuario){
-
-        Log.e("ABCD", " toy aqui en verPerfil mostar detalle  " + usuario.email);
-        usuarioText.setText("registro completado");
+    private void mostrarCerrarSesion() {
+        new AlertDialog.Builder(requireContext()).setTitle("\n\t\t                Sessió Tancada ")
+                .setMessage("\n\n")
+                .setCancelable(true)
+                .create()
+                .show();
+//        textoLogeadoOk.setText("Usuari Logeat");
+//        usuarioText.setText(usuario.email);
     }
+
+
+
+
+//    public void mostrarDetallePerfil(Usuario usuario){
+//
+//        Log.e("ABCD", " toy aqui en verPerfil mostar detalle  " + usuario.email);
+//        usuarioText.setText("registro completado");
+//    }
 }

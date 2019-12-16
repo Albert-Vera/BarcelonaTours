@@ -2,6 +2,7 @@ package com.example.bacelonatours;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -15,6 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,11 +28,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+  //      ActionBar actionBar = getSupportActionBar();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //getSupportActionBar().hide();
         //getWindow().setStatusBarColor(Color.TRANSPARENT);
+//        final TextView loginAppBar = actionBar.getCustomView().findViewById(R.id.loginHome);
+//
+//        loginAppBar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Navigation.findNavController(view).navigate(R.id.loginFragment);
+//            }
+//        });
+//
+//        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM| ActionBar.DISPLAY_SHOW_HOME);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -37,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.homeFragment, R.id.tourListFragment, R.id.detailFragment,
                 R.id.loginFragment, R.id.contactoFragment, R.id.registrarseFragment, R.id.verperfilfragment,
-                R.id.rutas_a_midaFragment, R.id.gastronomiaFragment , R.id.bloc_ideas_i_propostasFragment,R.id.activitats_de_empresaFragment)
+                R.id.rutas_a_midaFragment, R.id.gastronomiaFragment )
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -58,5 +72,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+
+
     }
 }

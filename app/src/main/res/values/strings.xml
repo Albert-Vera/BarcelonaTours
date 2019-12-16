@@ -15,16 +15,20 @@
     <string name="action_ingles">English</string>
     <string name="action_catala">Català</string>
     <string name="action_settings">Settings</string>
-    <string name="explorar_tours">Explorar les Notres Rutas</string>
+    <string name="explorar_tours">Explorar les Nostres Rutas</string>
     <string name="menu_opcio8">Galeria de Fotos</string>
     <string name="menu_opcio7">La Meva Localització</string>
     <string name="menu_opcio1">Les Nostres Rutes</string>
     <string name="menu_opcio2">Visites a Mida</string>
-    <string name="menu_opcio3">"Activitats d'empresa"</string>
-    <string name="menu_opcio4">"Bloc: Idees i Consells"</string>
-    <string name="menu_opcio5">Busques la Ruta Perfecte</string>
+    <string name="menu_opcio3">"Tours Realitzats"</string>
+    <string name="menu_opcio4">"Reservas Realitzades"</string>
+    <string name="menu_opcio5">Login </string>
+    <string name="menu_opcio10">Login Out</string>
     <string name="menu_opcio6">Especial Gastronomia</string>
     <string name="menu_opcio9">Contact</string>
+    <string name="tourRealitzats">Tours Realitzats</string>
+    <string name="reservasRealitzades">Reserves Realitzades</string>
+
 
     <string name="detailpreu">180 euros</string>
 
@@ -35,6 +39,12 @@
     <string name="emailSending">Transfering your Email </string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="adresaEmail">bondia@barcelonina.com</string>
 
+    <string name="contacteTitol">Com podem ajudar-te ?</string>
+    <string name="contacteText">Si estàs cercant un guia expert local, has aterrat al lloc correcte. Esperem que tot el que has llegit hagi despertat les ganes de conèixer Barcelona en profunditat. Som experts en la matèria i aquí pots veure les nostres propostes.
+
+So vols una ruta personalitzada o bé tens alguna pregunta o demanda, contacta’ns, estarem encantats de tenir notícies teves.</string>
+    <string name="contacteText2">Si tens qualsevol dubte o petició, estarem encantats de respondre’t. Per això pots ompñilr el formulari sota el text o bé escriure’ns a hola@barcelonina.com.
+\nSi vols parlar amb nosaltres, ens pots trucar al 666 66 66 60, en Pepito de los Palotes, qui s’ocupa de tot el back office, estarà encantat de parlar amb tu.</string>
 </resources>

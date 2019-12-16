@@ -24,17 +24,19 @@ public abstract class AppDataBase extends androidx.room.RoomDatabase{
     public static AppDataBase getInstance(Context context){
 
         if(appDataBase == null){
-            appDataBase = Room.databaseBuilder(context, AppDataBase.class, "app.db")
-                     .fallbackToDestructiveMigration()
-                     .addCallback(new RoomDatabase.Callback() {
-                         @Override
-                         public void onCreate(@NonNull SupportSQLiteDatabase db) {
-                             super.onCreate(db);
-                             crearUsuario();
-                         }
+           // synchronized (AppDatabase.class) {
+                appDataBase = Room.databaseBuilder(context, AppDataBase.class, "app.db")
+                        .fallbackToDestructiveMigration()
+                        .addCallback(new RoomDatabase.Callback() {
+                            @Override
+                            public void onCreate(@NonNull SupportSQLiteDatabase db) {
+                                super.onCreate(db);
+                                crearUsuario();
+                            }
 
-                     }) // anadir por defecto datos
-                    .build();
+                        }) // anadir por defecto datos
+                        .build();
+            //}
         }
         return appDataBase;
     }
@@ -48,8 +50,4 @@ public abstract class AppDataBase extends androidx.room.RoomDatabase{
         });
     }
 
-//    private static void leerUsuario(){
-//        AsyncTask.execute(new Callable<Usuario>())
-//        });
-//    }
 }

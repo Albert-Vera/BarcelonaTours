@@ -2,16 +2,17 @@ package com.example.bacelonatours;
 
 
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.navigation.ActionOnlyNavDirections;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -22,8 +23,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.bacelonatours.model.Usuario;
 
@@ -34,10 +37,10 @@ import com.example.bacelonatours.model.Usuario;
 public class LoginFragment extends Fragment  {
 
     EditText emailLogin, password;
-    MainViewModel mainViewModel;
-    TextView phone;
-    Usuario usuario;
-    NavController navController;
+    Button iniciarSesionButton;
+    private TextView phone, irAlRegistroTextView;;
+
+    private AutenticacionViewModel autenticacionViewModel;
 
     public LoginFragment() {}
 
@@ -47,14 +50,15 @@ public class LoginFragment extends Fragment  {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
-        navController = Navigation.findNavController(view);
+        autenticacionViewModel = ViewModelProviders.of(requireActivity()).get(AutenticacionViewModel.class);
+
 
         emailLogin = view.findViewById(R.id.email_login);
         password = view.findViewById(R.id.password_login);
+
         view.findViewById(R.id.phoneLogin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,43 +69,50 @@ public class LoginFragment extends Fragment  {
                 }
             }
         });
-        //  SUBRAYAR TEXTO phone
-        phone = view.findViewById(R.id.phoneLogin);
-        SpannableString subrallarPhone = new SpannableString(" 666 333 222");
-        subrallarPhone.setSpan(new UnderlineSpan(), 0, subrallarPhone.length(), 0);
-        phone.setText(subrallarPhone);
 
-        view.findViewById(R.id.loginboton).setOnClickListener(new View.OnClickListener() {
+
+        irAlRegistroTextView = view.findViewById(R.id.iraregistro);
+        iniciarSesionButton = view.findViewById(R.id.loginboton);
+        iniciarSesionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                autenticacionViewModel.iniciarSesion(emailLogin.getText().toString(), password.getText().toString());
+            }
+        });
+
+        irAlRegistroTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int rellenadoformulario = 0;
-                usuario = new Usuario(emailLogin.getText().toString(), password.getText().toString());
-                Log.e("ABCD", " toy aqui en Login.empty " + usuario.email);
-                emailLogin.setError("Introdueix el teu email");
-                password.setError("Introdueix una contrasenya");
+                Navigation.findNavController(view).navigate(R.id.registrarseFragment);
+            }
+        });
 
-                if (!usuario.email.isEmpty()){  rellenadoformulario ++; }
+        autenticacionViewModel.estadoDeLaAutenticacion.observe(getViewLifecycleOwner(), new Observer<AutenticacionViewModel.EstadoDeLaAutenticacion>() {
+            @Override
+            public void onChanged(AutenticacionViewModel.EstadoDeLaAutenticacion estadoDeLaAutenticacion) {
+                switch (estadoDeLaAutenticacion){
+                    case AUTENTICADO:
+                        Log.e("ABCD", " toy aqui Usuario Ade aqui me voy a.... " );
+                        //Navigation.findNavController(view).popBackStack(); //regresa patras
+                        Navigation.findNavController(view).navigate(R.id.verperfilfragment);
+                        break;
 
-                if (!usuario.password.isEmpty()){  rellenadoformulario ++; }
-
-                if (rellenadoformulario == 2){
-                    mainViewModel.resgistrarUsuario(usuario.email, usuario.password);
-                    navController.navigate(R.id.verperfilfragment);
-
+                    case AUTENTICACION_INVALIDA:
+                        Toast.makeText(getContext(), "CREDENCIALES NO VALIDAS", Toast.LENGTH_SHORT).show();
+                        break;
                 }
             }
         });
 
-        view.findViewById(R.id.iraregistro).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.registrarseFragment);
-
-
-            }
-        });
-
-
+        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(),
+                new OnBackPressedCallback(true) {
+                    @Override
+                    public void handleOnBackPressed() {
+                        Log.e("ABCD", " toy aqui Usuario toy en getonBackPressed en Autentificacion " );
+                        Navigation.findNavController(view).popBackStack(R.id.homeFragment, false);// modificat destino
+                    }
+                });
     }
+
 
 }

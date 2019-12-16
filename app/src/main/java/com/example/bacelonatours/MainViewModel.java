@@ -30,8 +30,6 @@ public class MainViewModel extends AndroidViewModel {
     Application application;
     AppDao appDao;
 
-
-
     public MutableLiveData<Tour> tour = new MutableLiveData<>();
     public MutableLiveData<Usuario> usuario = new MutableLiveData<>();
     public MutableLiveData<Boolean> usuarioNoDisponible= new MutableLiveData<>();
@@ -40,6 +38,7 @@ public class MainViewModel extends AndroidViewModel {
     public MainViewModel(@NonNull Application application) {
         super(application);
         this.application = application;
+
         appDao = AppDataBase.getInstance(application).appDao();
     }
 
@@ -121,29 +120,25 @@ public class MainViewModel extends AndroidViewModel {
 //        return apiResponse;
 //    }
 
-    public void resgistrarUsuario(final String email, final String password){
-
-
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                Usuario usuario = appDao.comprobarEmailDisponible(email);
-                Log.e("ABCD", " toy aqui en registrarUsuario " + email);
-
-                if(usuario == null){
-                    appDao.insertarUsuario(new Usuario(email, password));
-                }else {
-                    usuarioNoDisponible.postValue(true);   // posvalue cuando esta esperando datos
-                    Log.e("ABCD", " toy aqui Registrar usuario-NO DISPONIOBLE Ya EXISTEo " + usuario.email);
-                    //navegar a ver perfil entrada autorizada
-
-
-
-                }
-            }
-        });
-
-    }
+//    public void registrarUsuario(final String email, final String password){
+//
+//        AsyncTask.execute(new Runnable() {
+//            @Override
+//            public void run() {
+//                Usuario usuario = appDao.comprobarEmailDisponible(email);
+//                Log.e("ABCD", " toy aqui en registrarUsuario " + email);
+//
+//                if(usuario == null){
+//                    appDao.insertarUsuario(new Usuario(email, password));
+//                }else {
+//                    usuarioNoDisponible.postValue(true);   // posvalue cuando esta esperando datos
+//                    Log.e("ABCD", " toy aqui Registrar usuario-NO DISPONIOBLE Ya EXISTEo " + usuario.email);
+//                    //navegar a ver perfil entrada autorizada
+//                }
+//            }
+//        });
+//
+//    }
 
 //    public void leerUltimoRegistro(){
 //        AsyncTask.execute(new Runnable() {

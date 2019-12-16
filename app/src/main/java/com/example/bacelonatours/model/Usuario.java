@@ -1,6 +1,7 @@
 package com.example.bacelonatours.model;
 
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -19,5 +20,10 @@ public class Usuario {
     public Usuario(String email, String password) {
         this.email = email;
         this.password = password;
+    }
+    @NonNull
+    @Override
+    public String toString() {
+        return "USER = " + email + " " + password ;
     }
 }

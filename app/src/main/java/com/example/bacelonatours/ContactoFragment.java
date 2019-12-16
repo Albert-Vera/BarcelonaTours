@@ -1,7 +1,10 @@
 package com.example.bacelonatours;
 
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,10 +13,14 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.text.SpannableString;
+import android.text.TextUtils;
+import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Timer;
@@ -22,12 +29,12 @@ import static android.content.Context.MODE_PRIVATE;
 
 
 /**
+ * Contacto del menu desplegable
  * A simple {@link Fragment} subclass.
  */
 public class ContactoFragment extends Fragment {
 
-    DatePicker datePicker1;
-    SharedPreferences prefs;
+    TextView phone;
     NavController navController;
 
     public ContactoFragment() {
@@ -46,35 +53,34 @@ public class ContactoFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
-
-        view.findViewById(R.id.enviarReserva).setOnClickListener(new View.OnClickListener() {
+            // Phone
+        view.findViewById(R.id.phoneContacte).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.cerrarfragment);
+                String phoneNo = "667111222";
+                if(!TextUtils.isEmpty(phoneNo)) {
+                    String dial = "tel:" + phoneNo;
+                    startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(dial)));
+                }
             }
         });
+        //  SUBRAYAR TEXTO phone
+        phone = view.findViewById(R.id.phoneContacte);
+        SpannableString subrallarPhone = new SpannableString(" 666 333 222");
+        subrallarPhone.setSpan(new UnderlineSpan(), 0, subrallarPhone.length(), 0);
+        phone.setText(subrallarPhone);
+        view.findViewById(R.id.contacteBoton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new AlertDialog.Builder(requireContext()).setTitle("\t\t    Hem rebut la teva consulte ")
+                        .setMessage("\t      ")
+                        .setMessage("\t     Rebràs un email de confirmació ")
+                        .setCancelable(true)
+                        .create()
+                        .show();
+            }
 
-
-
-
-
-        //prefs = getPreferences(MODE_PRIVATE);
-
-//        datePicker1 = view.findViewById(R.id.datePicker1);
-//        datePicker1.updateDate(
-//                prefs.getInt("DATEPICKER1_YEAR", datePicker1.getYear()),
-//                prefs.getInt("DATEPICKER1_MONTH", datePicker1.getMonth()),
-//                prefs.getInt("DATEPICKER1_DAYOFMONTH", datePicker1.getDayOfMonth()));
-//
-//        datePicker1.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
-//            @Override
-//            public void onDateChanged(DatePicker datePicker, int i, int i1, int i2) {
-//                prefs.edit()
-//                        .putInt("DATEPICKER1_YEAR", i)
-//                        .putInt("DATEPICKER1_MONTH", i1)
-//                        .putInt("DATEPICKER1_DAYOFMONTH", i2)
-//                        .apply();
-//            }
-//        });
+        });
     }
 }
+

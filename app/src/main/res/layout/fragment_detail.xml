@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     android:fillViewport="true">
 
 
@@ -42,20 +43,20 @@
 
             </ImageView>
 
-            <Button
-                android:id="@+id/favoritos"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginBottom="28dp"
+<!--            <Button-->
+<!--                android:id="@+id/favoritos"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginBottom="28dp"-->
 
-                android:background="#00000000"
+<!--                android:background="#00000000"-->
 
-                android:drawableBottom="@drawable/ic_thumb_up_black_24dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/imageDetail">
+<!--                android:drawableBottom="@drawable/ic_thumb_up_black_24dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/imageDetail">-->
 
-            </Button>
+<!--            </Button>-->
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -79,15 +80,17 @@
                 android:layout_marginVertical="20dp">
             </TextView>
 
-            <RatingBar
+            <androidx.appcompat.widget.AppCompatRatingBar
                 android:id="@+id/ratingBarxml"
                 android:layout_width="264dp"
                 android:layout_height="46dp"
                 android:scaleX="0.7"
-                android:scaleY="0.7"
+                android:scaleY="0.8"
+
                 android:transformPivotX="25dp"
+
                 android:transformPivotY="35dp">
-            </RatingBar>
+            </androidx.appcompat.widget.AppCompatRatingBar>
 
 
 
@@ -130,24 +133,57 @@
                     android:layout_row="0"
                     android:layout_column="0">
 
-                    <TextView
-                        android:id="@+id/tourResource"
-
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="5dp"
-                        android:layout_margin="15dp"
-                        android:textColor="@color/Negre"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent">
-                    </TextView>
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/preuDetail"
+                            android:layout_width="70dp"
+                            android:layout_height="85dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginLeft="35dp"
+                            android:background="@drawable/rounded_shape_blau"
+                            android:paddingVertical="20dp"
+                            android:textAlignment="center"
+
+                            >
+
+                        </TextView>
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="85dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginLeft="30dp"
+                            android:background="@drawable/rounded_shape_blau"
+                            android:paddingVertical="20dp"
+                            android:textAlignment="center"
+
+                            android:text="1/6 Pers.">
+
+                        </TextView>
+                        <TextView
+                            android:id="@+id/tourResource"
+                            android:layout_width="70dp"
+                            android:layout_height="85dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginLeft="30dp"
+                            android:background="@drawable/rounded_shape_blau"
+                            android:paddingVertical="30dp"
+                            android:textAlignment="center"
+                           >
+
+                        </TextView>
+                    </LinearLayout>
+
+
+
                     <TextView
                         android:id="@+id/tourExplain"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="60dp"
+                        android:paddingTop="90dp"
                         android:layout_margin="15dp"
                         android:textColor="@color/Negre"
                         android:textSize="18sp"

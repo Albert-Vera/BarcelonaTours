@@ -53,31 +53,41 @@
     <fragment
         android:id="@+id/emailFragment"
         android:name="com.example.bacelonatours.emailFragment"
-        android:label="fragment_email"
+        android:label=""
         tools:layout="@layout/fragment_email" />
     <fragment
         android:id="@+id/rutas_a_midaFragment"
         android:name="com.example.bacelonatours.visites_a_midaFragment"
-        android:label="fragment_rutas_a_mida"
+        android:label=""
         tools:layout="@layout/visites_fragment" />
-    <fragment
-        android:id="@+id/activitats_de_empresaFragment"
-        android:name="com.example.bacelonatours.activitats_de_empresaFragment"
-        android:label="fragment_activitats_de_empresa"
-        tools:layout="@layout/fragment_activitats_de_empresa" />
-    <fragment
-        android:id="@+id/bloc_ideas_i_propostasFragment"
-        android:name="com.example.bacelonatours.bloc_ideas_i_propostasFragment"
-        android:label="fragment_bloc_ideas_i_propostas"
-        tools:layout="@layout/fragment_bloc_ideas_i_propostas" />
     <fragment
         android:id="@+id/gastronomiaFragment"
         android:name="com.example.bacelonatours.gastronomiaFragment"
-        android:label="fragment_gastronomia"
+        android:label=""
         tools:layout="@layout/fragment_gastronomia" />
     <fragment
         android:id="@+id/myLocationFragment"
         android:name="com.example.bacelonatours.MyLocationFragment"
-        android:label="fragment_my_location"
+        android:label=""
         tools:layout="@layout/fragment_my_location" />
+    <fragment
+        android:id="@+id/toursRealizadosFragment"
+        android:name="com.example.bacelonatours.ToursRealizadosFragment"
+        android:label=""
+        tools:layout="@layout/fragment_tours_realizados" />
+    <fragment
+        android:id="@+id/reservasRealizadasFragment"
+        android:name="com.example.bacelonatours.ReservasRealizadasFragment"
+        android:label=""
+        tools:layout="@layout/fragment_reservas_realizadas" />
+    <fragment
+        android:id="@+id/loginOutFragment2"
+        android:name="com.example.bacelonatours.LoginOutFragment"
+        android:label=""
+        tools:layout="@layout/fragment_login_out" />
+    <fragment
+        android:id="@+id/reservarTourFragment"
+        android:name="com.example.bacelonatours.ReservarTourFragment"
+        android:label=""
+        tools:layout="@layout/fragment_reservar_tour" />
 </navigation>

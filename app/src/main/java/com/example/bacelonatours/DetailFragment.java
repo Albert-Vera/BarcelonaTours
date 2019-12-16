@@ -26,11 +26,14 @@ import com.bumptech.glide.Glide;
 import com.example.bacelonatours.model.Tour;
 import com.example.bacelonatours.model.TourDetail;
 
+/**
+ * Clase para los detalles de cada tour disponile
+ */
 public class DetailFragment extends Fragment {
 
     MainViewModel mainViewModel;
 
-    private TextView titulo, descripcion, explain;
+    private TextView titulo, descripcion, explain, preuDetailText;
     private Button imgFavoritos;
     private ImageView imagenDetail ;
     RatingBar ratingBar;
@@ -69,22 +72,23 @@ public class DetailFragment extends Fragment {
         mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
 
         titulo = view.findViewById(R.id.detail);
+        preuDetailText = view.findViewById(R.id.preuDetail);
         descripcion = view.findViewById(R.id.tourResource);
         explain = view.findViewById(R.id.tourExplain);
         imagenDetail = view.findViewById(R.id.imageDetail);
-        imgFavoritos = view.findViewById(R.id.favoritos);
-        imgFavoritos.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                new AlertDialog.Builder(requireContext()).setTitle("\t\t                Afegit ")
-                        .setMessage("\t      A la teve llista de favorits")
-                        .setCancelable(true)
-                        .create()
-                        .show();
-            }
-
-        });
+       // imgFavoritos = view.findViewById(R.id.favoritos);
+//        imgFavoritos.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View v) {
+//                new AlertDialog.Builder(requireContext()).setTitle("\t\t                Afegit ")
+//                        .setMessage("\t      A la teve llista de favorits")
+//                        .setCancelable(true)
+//                        .create()
+//                        .show();
+//            }
+//
+//        });
 
 
 
@@ -116,7 +120,8 @@ public class DetailFragment extends Fragment {
                 Log.e("ABCD", " lalacosa " + tourDetail.tourId);
                 titulo.setText(tourDetail.tourName);
                 Glide.with(requireActivity()).load(tourDetail.tourImage).into(imagenDetail);
-                descripcion.setText(tourDetail.tourDescription);
+                preuDetailText.setText(tourDetail.tourDescription);
+                descripcion.setText(tourDetail.tourResource);
                 explain.setText(tourDetail.tourExplain);
             }
         });

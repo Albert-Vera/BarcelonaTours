@@ -12,16 +12,15 @@ import com.example.bacelonatours.model.Usuario;
 @Dao
 public abstract class AppDao {
 
-    @Query(value = "SELECT * FROM Usuario WHERE email = :email")
-    public abstract Usuario comprobarEmailDisponible(String email);
-
-
-
-
     @Insert
     public abstract void insertarUsuario(Usuario usuario);
 
-//    @Query(value = "SELECT * FROM Usuario WHERE id = MAX(id)")
-//    public abstract Usuario ultimoRegistro();
+    @Query(value = "SELECT * FROM Usuario WHERE email = :email")
+    public abstract Usuario comprobarEmailDisponible(String email);
+
+    @Query("SELECT * FROM Usuario WHERE email = :email AND password = :password")
+    public abstract Usuario autenticar(String email, String password);
+
+
 
 }
