@@ -3,6 +3,7 @@ package com.example.bacelonatours;
 
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -59,16 +60,6 @@ public class LoginFragment extends Fragment  {
         emailLogin = view.findViewById(R.id.email_login);
         password = view.findViewById(R.id.password_login);
 
-        view.findViewById(R.id.phoneLogin).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String phoneNo = "667111222";
-                if(!TextUtils.isEmpty(phoneNo)) {
-                    String dial = "tel:" + phoneNo;
-                    startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(dial)));
-                }
-            }
-        });
 
 
         irAlRegistroTextView = view.findViewById(R.id.iraregistro);
@@ -93,8 +84,45 @@ public class LoginFragment extends Fragment  {
                 switch (estadoDeLaAutenticacion){
                     case AUTENTICADO:
                         Log.e("ABCD", " toy aqui Usuario Ade aqui me voy a.... " );
-                        //Navigation.findNavController(view).popBackStack(); //regresa patras
-                        Navigation.findNavController(view).navigate(R.id.verperfilfragment);
+                        Navigation.findNavController(view).popBackStack(); //regresa patras
+
+                        new AlertDialog.Builder(requireContext()).setTitle("\t\t           LOGIN IN      ")
+                                .setMessage("\t      ")
+                                .setMessage("\t                Estas dintre               ")
+                                .setCancelable(true)
+                                .create()
+                                .show();
+                        autenticacionViewModel.estadoDeLaAutenticacion.postValue((AutenticacionViewModel.EstadoDeLaAutenticacion.YA_AUTENTIFICADO));
+
+                        break;
+
+                                // YA AUTENTIFICADO es para si le das por segunda vez a LOGIN
+                                // te detecta como YA ATENTIFICADO y entonces pues hace LOGIN OUT
+                    case YA_AUTENTIFICADO:
+
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+
+                        builder.setTitle("\t\t           LOGIN OUT      ")
+                                .setMessage("\t      ")
+                                .setMessage("\tAre you sure?")
+                                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        autenticacionViewModel.cerrarSesion();
+                                        Navigation.findNavController(view).popBackStack();
+                                    }
+                                })
+                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Navigation.findNavController(view).popBackStack();
+                                    }
+                                })
+
+
+                                .create()
+                                .show();
                         break;
 
                     case AUTENTICACION_INVALIDA:

@@ -1,15 +1,12 @@
 package com.example.bacelonatours;
 
 import android.app.Application;
-import android.os.AsyncTask;
 import android.util.Log;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.navigation.Navigation;
 
 import com.example.bacelonatours.db.AppDao;
 import com.example.bacelonatours.db.AppDataBase;
@@ -32,7 +29,6 @@ public class MainViewModel extends AndroidViewModel {
 
     public MutableLiveData<Tour> tour = new MutableLiveData<>();
     public MutableLiveData<Usuario> usuario = new MutableLiveData<>();
-    public MutableLiveData<Boolean> usuarioNoDisponible= new MutableLiveData<>();
     public Boolean quiereRegistrarse = false;
 
     public MainViewModel(@NonNull Application application) {
@@ -99,67 +95,6 @@ public class MainViewModel extends AndroidViewModel {
 
         return apiResponse;
     }
-//    public LiveData<Tour> obtenerGastronomia(String tourId){
-//        final MutableLiveData<Tour> apiResponse = new MutableLiveData<>();
-//
-//        try {
-//            Gson gson = new Gson();
-//
-//            int resourceId = application.getResources().getIdentifier(tourId, "raw", "com.example.bacelonatours");
-//
-//            InputStream raw =  application.getResources().openRawResource(resourceId);
-//            Reader rd = new BufferedReader(new InputStreamReader(raw));
-//            gastronomiaFragment data = gson.fromJson(rd, gastronomiaFragment.class);
-//
-//            apiResponse.setValue(data);
-//
-//        }catch (Exception e){
-//            Log.e("ABCD", "Exception" + e.getMessage());
-//        }
-//
-//        return apiResponse;
-//    }
-
-//    public void registrarUsuario(final String email, final String password){
-//
-//        AsyncTask.execute(new Runnable() {
-//            @Override
-//            public void run() {
-//                Usuario usuario = appDao.comprobarEmailDisponible(email);
-//                Log.e("ABCD", " toy aqui en registrarUsuario " + email);
-//
-//                if(usuario == null){
-//                    appDao.insertarUsuario(new Usuario(email, password));
-//                }else {
-//                    usuarioNoDisponible.postValue(true);   // posvalue cuando esta esperando datos
-//                    Log.e("ABCD", " toy aqui Registrar usuario-NO DISPONIOBLE Ya EXISTEo " + usuario.email);
-//                    //navegar a ver perfil entrada autorizada
-//                }
-//            }
-//        });
-//
-//    }
-
-//    public void leerUltimoRegistro(){
-//        AsyncTask.execute(new Runnable() {
-//            @Override
-//            public void run() {
-//                Usuario usuario = appDao.ultimoRegistro();
-//                Log.e("ABCD", " toy aqui en ir a ultimo Registro " );
-//                if(usuario == null){
-//                    Log.e("ABCD", " toy aqui en ir a ultimo Registro cagada es nulo " );
-//                }else {
-//                    new VerPerfilFragment(usuario).mostrarDetallePerfil(usuario); ;   // posvalue cuando esta esperando datos
-//                    Log.e("ABCD", " toy aqui Registrar usuario-NO DISPONIOBLE Ya EXISTEo " + usuario.email);
-//                    //navegar a ver perfil entrada autorizada
-//
-//
-//
-//                }
-//            }
-//        });
-//    }
-
 
 //    public LiveData<BarceloninaResponse> obtenerTours(){
 //        final MutableLiveData<BarceloninaResponse> apiResponse = new MutableLiveData<>();

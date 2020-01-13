@@ -43,21 +43,6 @@
 
             </ImageView>
 
-            <Button
-                android:id="@+id/favoritosGastronomia"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginBottom="28dp"
-
-                android:background="#00000000"
-
-                android:drawableBottom="@drawable/ic_thumb_up_black_24dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/imageGastronomia">
-
-            </Button>
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -129,16 +114,16 @@
 
 
             </androidx.cardview.widget.CardView>
+
             <Button
                 android:id="@+id/meInteresaaGastronomia"
-                android:layout_width="290dp"
-                android:layout_height="50dp"
-
+                android:layout_width="200dp"
+                android:layout_height="52dp"
+                android:layout_marginBottom="60dp"
                 android:layout_gravity="center|bottom"
-                android:background="@drawable/loginbutton_back"
+
                 android:text="Me interesa"
-                android:textColor="@color/colorInput"
-                android:textSize="22sp"
+
                 style="@style/AppTheme.RoundedCornerMaterialButton"
                 android:ellipsize="none"
 

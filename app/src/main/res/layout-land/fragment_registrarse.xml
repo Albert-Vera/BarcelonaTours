@@ -4,49 +4,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Raro"
-    tools:context=".LoginFragment">
-
+    tools:context=".RegistrarseFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-        <LinearLayout
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginHorizontal="150dp"
+    android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/iconbarcelonina">
+
+        </ImageView>
+        <TextView
+
+            android:id="@+id/barceloninaRegister"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:orientation="horizontal">
+            android:layout_height="64dp"
 
+            android:fontFamily="cursive"
+            android:text="@string/barcelonina_text"
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+            android:textAlignment="center"
+            android:textSize="45dp" />
 
-                android:layout_marginLeft="50dp"
-                android:src="@drawable/iconbarcelonina">
-
-            </ImageView>
-            <TextView
-
-                android:id="@+id/barceloninaRegister"
-                android:layout_width="wrap_content"
-                android:layout_height="94dp"
-
-                android:fontFamily="cursive"
-                android:text="@string/barcelonina_text"
-
-                android:textAlignment="center"
-                android:textSize="45dp" />
-
-        </LinearLayout>
+</LinearLayout>
 
         <EditText
-            android:id="@+id/email_login"
+            android:id="@+id/email_registrarse"
             android:layout_width="290dp"
             android:layout_height="50dp"
-            android:layout_marginTop="90dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="180dp"
             android:background="@color/colorTextBoxBack"
             android:drawableLeft="@drawable/ic_person_outline_white_24dp"
             android:padding="5dp"
@@ -57,11 +57,11 @@
 
         </EditText>
         <EditText
-            android:id="@+id/password_login"
+            android:id="@+id/password_registrarse"
             android:layout_width="290dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginHorizontal="180dp"
             android:background="@color/colorTextBoxBack"
             android:drawableLeft="@drawable/ic_lock_white_24dp"
             android:padding="5dp"
@@ -73,29 +73,29 @@
 
         </EditText>
         <Button
-            android:id="@+id/loginboton"
+            android:id="@+id/registerboton"
             android:layout_width="290dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginHorizontal="180dp"
             android:textSize="22sp"
-            android:text="LOGIN"
+            android:text="REGISTRARSE"
             android:textColor="@color/colorInput"
             android:background="@drawable/rounded_shape_blau">
 
         </Button>
+
         <TextView
-            android:id="@+id/iraregistro"
+            android:id="@+id/noregistrarme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register Here"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="120dp"
-            android:textSize="22sp"
-            android:textColor="@color/colorInput"
-            android:padding="5dp">
+            android:text="No quiero registrarme"
+            android:textSize="18dp"
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="35dp">
 
         </TextView>
+
     </LinearLayout>
 
 </ScrollView>

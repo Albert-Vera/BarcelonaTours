@@ -4,6 +4,7 @@ package com.example.bacelonatours;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.DragEvent;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -32,18 +33,13 @@ import com.example.bacelonatours.model.TourDetail;
 public class DetailFragment extends Fragment {
 
     MainViewModel mainViewModel;
+    AutenticacionViewModel autenticacionViewModel;
 
     private TextView titulo, descripcion, explain, preuDetailText;
     private Button imgFavoritos;
     private ImageView imagenDetail ;
     RatingBar ratingBar;
 
-    int prefs;
-
-
-//    Matrix matrix = new Matrix();
-//    Float scale= 1f;
-//    ScaleGestureDetector SGD;
 
     public DetailFragment() {}
 
@@ -53,7 +49,7 @@ public class DetailFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         ratingBar = view.findViewById(R.id.ratingBarxml);
@@ -70,32 +66,27 @@ public class DetailFragment extends Fragment {
         });
 
         mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
+        autenticacionViewModel = ViewModelProviders.of(requireActivity()).get(AutenticacionViewModel.class);
 
         titulo = view.findViewById(R.id.detail);
         preuDetailText = view.findViewById(R.id.preuDetail);
         descripcion = view.findViewById(R.id.tourResource);
         explain = view.findViewById(R.id.tourExplain);
         imagenDetail = view.findViewById(R.id.imageDetail);
-       // imgFavoritos = view.findViewById(R.id.favoritos);
-//        imgFavoritos.setOnClickListener(new View.OnClickListener()
-//        {
-//            @Override
-//            public void onClick(View v) {
-//                new AlertDialog.Builder(requireContext()).setTitle("\t\t                Afegit ")
-//                        .setMessage("\t      A la teve llista de favorits")
-//                        .setCancelable(true)
-//                        .create()
-//                        .show();
-//            }
-//
-//        });
 
+        imagenDetail.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                new AlertDialog.Builder(requireContext()).setTitle("\t\tINTERACCIÓN OnLongListener")
+                        .setMessage("\t      ")
+                        .setMessage("\t      ")
+                        .setCancelable(true)
+                        .create()
+                        .show();
+                return false;
+            }
 
-
-
-        // TODO aqui variable sumarle puntos a imageDetail
-
-
+        });
 
         mainViewModel.tour.observe(getViewLifecycleOwner(), new Observer<Tour>() {
             @Override
@@ -105,12 +96,25 @@ public class DetailFragment extends Fragment {
         });
         view.findViewById(R.id.meInteresa).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(final View view) {
                 mainViewModel.quiereRegistrarse = true;
-                Navigation.findNavController(view).navigate(R.id.registrarseFragment);
+
+                // Si ya esta registrado va directo a reservar
+                autenticacionViewModel.estadoDeLaAutenticacion.observe(getViewLifecycleOwner(), new Observer<AutenticacionViewModel.EstadoDeLaAutenticacion>() {
+                    @Override
+                    public void onChanged(AutenticacionViewModel.EstadoDeLaAutenticacion estadoDeLaAutenticacion) {
+                        switch (estadoDeLaAutenticacion){
+                            case YA_AUTENTIFICADO:
+                                Navigation.findNavController(view).navigate(R.id.reservarTourFragment);
+                                break;
+                            case NO_AUTENTICADO:
+                                Navigation.findNavController(view).navigate(R.id.registrarseFragment);
+                                break;
+                        }
+                    }
+                });
             }
         });
-
     }
 
     private void mostrarDetalleDelTour(Tour tour) {
@@ -127,20 +131,4 @@ public class DetailFragment extends Fragment {
         });
     }
 
-//    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener{
-//        @Override
-//        public boolean onScale(ScaleGestureDetector detector) {
-//            scale = scale*detector.getScaleFactor();
-//            scale = Math.max(0.1f,Math.min(scale,5f));
-//            //matrix.setScale(scale,scale);
-//            imagenDetail.setImageMatrix(matrix);
-//            return true;
-//        }
-//    }
-//
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event){
-//        SGD.onTouchEvent(event);
-//        return true;
-//    }
 }

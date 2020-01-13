@@ -11,16 +11,34 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="260dp"
-            android:layout_height="90dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="50dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:orientation="horizontal">
 
 
-            android:src="@drawable/logobarcelonia">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
 
-        </ImageView>
+                android:layout_marginLeft="50dp"
+                android:src="@drawable/iconbarcelonina">
+
+            </ImageView>
+            <TextView
+
+                android:id="@+id/barceloninaRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="94dp"
+
+                android:fontFamily="cursive"
+                android:text="@string/barcelonina_text"
+
+                android:textAlignment="center"
+                android:textSize="45dp" />
+
+        </LinearLayout>
 
         <TextView
         android:id="@+id/textoLogeador"

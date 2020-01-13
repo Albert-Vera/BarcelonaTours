@@ -22,7 +22,8 @@ public class AutenticacionViewModel extends AndroidViewModel {
     public enum EstadoDeLaAutenticacion {
         NO_AUTENTICADO,
         AUTENTICADO,
-        AUTENTICACION_INVALIDA
+        AUTENTICACION_INVALIDA,
+        YA_AUTENTIFICADO
     }
 
     public enum EstadoDelRegistro {
@@ -37,7 +38,7 @@ public class AutenticacionViewModel extends AndroidViewModel {
 
     public MutableLiveData<EstadoDeLaAutenticacion> estadoDeLaAutenticacion = new MutableLiveData<>(EstadoDeLaAutenticacion.NO_AUTENTICADO);
     public MutableLiveData<EstadoDelRegistro> estadoDelRegistro = new MutableLiveData<>(EstadoDelRegistro.INICIO_DEL_REGISTRO);
-    public MutableLiveData<Boolean> usuarioActivado= new MutableLiveData<>();
+
 
     public AutenticacionViewModel(@NonNull Application application) {
         super(application);
@@ -73,6 +74,7 @@ public class AutenticacionViewModel extends AndroidViewModel {
                     usuarioLogeado = usuario;
                     estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICADO);
                     usuarioActivo.postValue(true);
+
                 } else {
                     estadoDeLaAutenticacion.postValue(EstadoDeLaAutenticacion.AUTENTICACION_INVALIDA);
                 }

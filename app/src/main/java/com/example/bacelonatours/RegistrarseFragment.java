@@ -1,8 +1,7 @@
 package com.example.bacelonatours;
 
 
-import android.content.Intent;
-import android.net.Uri;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,9 +12,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.text.style.UnderlineSpan;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,7 +33,7 @@ public class RegistrarseFragment extends Fragment {
     private AutenticacionViewModel autenticacionViewModel;
     NavController navController;
     MainViewModel mainViewModel;
-    TextView noRegistrar, phone;
+    TextView noRegistrar;
     private Button registrarButton;
     Usuario usuario;
     EditText emailEditText, passwordEditText;
@@ -111,7 +108,7 @@ public class RegistrarseFragment extends Fragment {
             public void onChanged(AutenticacionViewModel.EstadoDeLaAutenticacion estadoDeLaAutenticacion) {
                 switch (estadoDeLaAutenticacion){
                     case AUTENTICADO:
-                        Log.e("ABCD", " toy aqui Usuario toy en Autentificado .. " );
+                        Log.e("ABCD", " toy aqui Usuario toy en Autentificado 231.. " );
                         //Navigation.findNavController(view).popBackStack();
                         break;
                 }

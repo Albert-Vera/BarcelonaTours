@@ -58,6 +58,7 @@ public class visites_a_midaFragment extends Fragment {
             public void onChanged(Tour tour) {
 
                 mostrarVisitesaMide(tour);
+
             }
         });
     }

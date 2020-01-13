@@ -1,7 +1,10 @@
 package com.example.bacelonatours;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -16,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -64,7 +68,42 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case R.id.francesettings:
+                new AlertDialog.Builder(this).setTitle("\t\tAhora, si le pones imaginación ")
+                        .setMessage("\t      ")
+                        .setMessage("\t     Lo verás todo en Francés ")
+                        .setCancelable(true)
+                        .create()
+                        .show();
+                break;
+            case R.id.englishsettings:
+                new AlertDialog.Builder(this).setTitle("\t\tAhora, si le pones imaginación ")
+                        .setMessage("\t      ")
+                        .setMessage("\t     Lo verás todo en Inglés ")
+                        .setCancelable(true)
+                        .create()
+                        .show();
+                break;
+            case R.id.catalasettings:
+                new AlertDialog.Builder(this).setTitle("\t\tAhora, si le pones imaginación ")
+                        .setMessage("\t      ")
+                        .setMessage("\t     Lo verás todo en Catalán ")
+                        .setCancelable(true)
+                        .create()
+                        .show();
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

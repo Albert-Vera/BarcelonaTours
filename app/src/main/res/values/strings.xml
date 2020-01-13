@@ -10,6 +10,7 @@
     <string name="menu_mes_valorats">Tours mes ben valorats</string>
     <string name="menu_home">Home</string>
 
+    <string name="barcelonina_text">Barcelonina</string>
 
     <string name="action_francais">Français</string>
     <string name="action_ingles">English</string>
@@ -17,20 +18,19 @@
     <string name="action_settings">Settings</string>
     <string name="explorar_tours">Explorar les Nostres Rutas</string>
     <string name="menu_opcio8">Galeria de Fotos</string>
-    <string name="menu_opcio7">La Meva Localització</string>
+    <string name="menu_opcio7">Punt de Trobada</string>
     <string name="menu_opcio1">Les Nostres Rutes</string>
     <string name="menu_opcio2">Visites a Mida</string>
     <string name="menu_opcio3">"Tours Realitzats"</string>
     <string name="menu_opcio4">"Reservas Realitzades"</string>
-    <string name="menu_opcio5">Login </string>
+    <string name="menu_opcio5">Login in/out </string>
     <string name="menu_opcio10">Login Out</string>
     <string name="menu_opcio6">Especial Gastronomia</string>
     <string name="menu_opcio9">Contact</string>
     <string name="tourRealitzats">Tours Realitzats</string>
     <string name="reservasRealitzades">Reserves Realitzades</string>
-
-
     <string name="detailpreu">180 euros</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hacer_reserva">Reservar Tour </string>
@@ -47,4 +47,11 @@
 So vols una ruta personalitzada o bé tens alguna pregunta o demanda, contacta’ns, estarem encantats de tenir notícies teves.</string>
     <string name="contacteText2">Si tens qualsevol dubte o petició, estarem encantats de respondre’t. Per això pots ompñilr el formulari sota el text o bé escriure’ns a hola@barcelonina.com.
 \nSi vols parlar amb nosaltres, ens pots trucar al 666 66 66 60, en Pepito de los Palotes, qui s’ocupa de tot el back office, estarà encantat de parlar amb tu.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_home">THE REAL TOURIST EXPERIENCE IN BARCELONA</string>
+    <string name="text_home1">Barcelonina</string>
+    <string name="text_home2">Private guide</string>
+    <string name="text_movidito">Les nostres rutas Activitats d\'empresa Descobreix el món gastronómic a Barcelona Tallers artesanals Visites a mida Blog: ideas i propostes</string>
 </resources>
