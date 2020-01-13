@@ -17,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.bacelonatours.model.Tour;
 import com.example.bacelonatours.model.TourDetail;
 
 
@@ -26,7 +25,7 @@ import com.example.bacelonatours.model.TourDetail;
  */
 // TODO esta clase revisala... esta anulada pero cosas
 
-public class gastronomiaFragment extends Fragment {
+public class GastronomiaFragment extends Fragment {
 
     private ImageView imageVisiteAMida;
 
@@ -34,7 +33,7 @@ public class gastronomiaFragment extends Fragment {
 
     private TextView titulo, descripcion, explain;
 
-    public gastronomiaFragment() {
+    public GastronomiaFragment() {
         // Required empty public constructor
     }
 
@@ -55,16 +54,13 @@ public class gastronomiaFragment extends Fragment {
         imageVisiteAMida = view.findViewById(R.id.imageGastronomia);
 
         mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
-        mainViewModel.tour.observe(getViewLifecycleOwner(), new Observer<Tour>() {
-            @Override
-            public void onChanged(Tour tour) {
 
-                mostrarVisitesaMide(tour);
-            }
-        });
+
+        mostrarVisitesAMida();
+
     }
 
-    private void mostrarVisitesaMide(Tour tour) {
+    private void mostrarVisitesAMida() {
         mainViewModel.obtenerTourDetail("t10").observe(getViewLifecycleOwner(), new Observer<TourDetail>() {
             @Override
             public void onChanged(TourDetail tourDetail) {

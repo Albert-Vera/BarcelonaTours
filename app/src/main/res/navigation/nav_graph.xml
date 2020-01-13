@@ -57,12 +57,12 @@
         tools:layout="@layout/fragment_email" />
     <fragment
         android:id="@+id/rutas_a_midaFragment"
-        android:name="com.example.bacelonatours.visites_a_midaFragment"
+        android:name="com.example.bacelonatours.VisitesAMidaFragment"
         android:label=""
         tools:layout="@layout/visites_fragment" />
     <fragment
         android:id="@+id/gastronomiaFragment"
-        android:name="com.example.bacelonatours.gastronomiaFragment"
+        android:name="com.example.bacelonatours.GastronomiaFragment"
         android:label=""
         tools:layout="@layout/fragment_gastronomia" />
     <fragment

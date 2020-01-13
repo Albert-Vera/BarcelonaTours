@@ -4,10 +4,8 @@ package com.example.bacelonatours;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.DragEvent;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -28,7 +26,7 @@ import com.example.bacelonatours.model.Tour;
 import com.example.bacelonatours.model.TourDetail;
 
 /**
- * Clase para los detalles de cada tour disponile
+ * Clase para los detalles de cada tourSeleccionado disponile
  */
 public class DetailFragment extends Fragment {
 
@@ -88,7 +86,7 @@ public class DetailFragment extends Fragment {
 
         });
 
-        mainViewModel.tour.observe(getViewLifecycleOwner(), new Observer<Tour>() {
+        mainViewModel.tourSeleccionado.observe(getViewLifecycleOwner(), new Observer<Tour>() {
             @Override
             public void onChanged(Tour tour) {
                 mostrarDetalleDelTour(tour);

@@ -27,7 +27,7 @@ public class MainViewModel extends AndroidViewModel {
     Application application;
     AppDao appDao;
 
-    public MutableLiveData<Tour> tour = new MutableLiveData<>();
+    public MutableLiveData<Tour> tourSeleccionado = new MutableLiveData<>();
     public MutableLiveData<Usuario> usuario = new MutableLiveData<>();
     public Boolean quiereRegistrarse = false;
 

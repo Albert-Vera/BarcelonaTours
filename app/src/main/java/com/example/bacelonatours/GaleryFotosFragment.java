@@ -5,19 +5,15 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.view.MotionEventCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -30,12 +26,10 @@ import com.example.bacelonatours.model.Tour;
 
 import java.util.List;
 
-import static android.view.MotionEvent.INVALID_POINTER_ID;
-
 
 /**
  * Esto de momento tiene un nombre cambiado....
- * Clase para tour mas bien valorados
+ * Clase para tourSeleccionado mas bien valorados
  * A simple {@link Fragment} subclass.
  */
 public class GaleryFotosFragment extends Fragment {
@@ -183,7 +177,7 @@ public class GaleryFotosFragment extends Fragment {
 
                 final Tour tour = tourList.get(position);
 
-                //holder.name.setText(tour.tourName);
+                //holder.name.setText(tourSeleccionado.tourName);
                 holder.nameGalery.setText(tour.tourName);
                 Log.e("ABCD", " lala " + tour.tourName);
                 Glide.with(requireActivity()).load(tour.tourImages).into(holder.imageItemGalery);
@@ -192,7 +186,7 @@ public class GaleryFotosFragment extends Fragment {
                 holder.imageItemGalery.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        mainViewModel.tour.setValue(tour);
+                        mainViewModel.tourSeleccionado.setValue(tour);
 
                         Navigation.findNavController(view).navigate(R.id.galeryFotosFragment);
                     }

@@ -24,7 +24,7 @@ import com.example.bacelonatours.model.TourDetail;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class visites_a_midaFragment extends Fragment {
+public class VisitesAMidaFragment extends Fragment {
 
     private ImageView imageVisiteAMida;
 
@@ -32,7 +32,7 @@ public class visites_a_midaFragment extends Fragment {
 
     private TextView titulo, descripcion, explain;
 
-    public visites_a_midaFragment() {
+    public VisitesAMidaFragment() {
         // Required empty public constructor
     }
 
@@ -53,17 +53,12 @@ public class visites_a_midaFragment extends Fragment {
         explain = view.findViewById(R.id.visitesxxxxx);
         mainViewModel = ViewModelProviders.of(requireActivity()).get(MainViewModel.class);
         imageVisiteAMida = view.findViewById(R.id.imageVisitesaMida);
-        mainViewModel.tour.observe(getViewLifecycleOwner(), new Observer<Tour>() {
-            @Override
-            public void onChanged(Tour tour) {
 
-                mostrarVisitesaMide(tour);
+        mostrarVisitesaMide();
 
-            }
-        });
     }
 
-    private void mostrarVisitesaMide(Tour tour) {
+    private void mostrarVisitesaMide() {
         mainViewModel.obtenerTourDetail("t9").observe(getViewLifecycleOwner(), new Observer<TourDetail>() {
             @Override
             public void onChanged(TourDetail tourDetail) {

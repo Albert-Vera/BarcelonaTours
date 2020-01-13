@@ -3,21 +3,14 @@ package com.example.bacelonatours;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -28,9 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.bacelonatours.model.BarceloninaResponse;
 import com.example.bacelonatours.model.Tour;
-import com.google.android.material.snackbar.Snackbar;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -90,7 +81,7 @@ public class TourListFragment extends Fragment  {
 
             final Tour tour = tourList.get(position);
 
-            //holder.name.setText(tour.tourName);
+            //holder.name.setText(tourSeleccionado.tourName);
             holder.desc.setText(tour.tourDescription);
             Log.e("ABCD", " lala " + tour.tourImages);
             Glide.with(requireActivity()).load(tour.tourImages).into(holder.imageItem);
@@ -107,7 +98,7 @@ public class TourListFragment extends Fragment  {
             holder.imageItem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mainViewModel.tour.setValue(tour);
+                    mainViewModel.tourSeleccionado.setValue(tour);
 
                     Navigation.findNavController(view).navigate(R.id.detailFragment);
                 }
