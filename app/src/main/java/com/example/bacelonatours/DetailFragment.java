@@ -34,7 +34,6 @@ public class DetailFragment extends Fragment {
     AutenticacionViewModel autenticacionViewModel;
 
     private TextView titulo, descripcion, explain, preuDetailText;
-    private Button imgFavoritos;
     private ImageView imagenDetail ;
     RatingBar ratingBar;
 

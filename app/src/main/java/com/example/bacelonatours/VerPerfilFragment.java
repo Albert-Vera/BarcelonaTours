@@ -2,25 +2,19 @@ package com.example.bacelonatours;
 
 
 import android.app.AlertDialog;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
-import com.example.bacelonatours.db.AppDao;
-import com.example.bacelonatours.model.Usuario;
 
 
 /**
@@ -54,7 +48,6 @@ public class VerPerfilFragment extends Fragment {
 
         autenticacionViewModel = ViewModelProviders.of(requireActivity()).get(AutenticacionViewModel.class);
 
-       // nombreEditText = view.findViewById(R.id.verperfil);
 
         textoLogeadoOk = view.findViewById(R.id.textoLogeador);
         view.findViewById(R.id.continuarLogeao).setOnClickListener(new View.OnClickListener() {
@@ -82,16 +75,7 @@ public class VerPerfilFragment extends Fragment {
                 .setCancelable(true)
                 .create()
                 .show();
-//        textoLogeadoOk.setText("Usuari Logeat");
-//        usuarioText.setText(usuario.email);
+
     }
 
-
-
-
-//    public void mostrarDetallePerfil(Usuario usuario){
-//
-//        Log.e("ABCD", " toy aqui en verPerfil mostar detalle  " + usuario.email);
-//        usuarioText.setText("registro completado");
-//    }
 }

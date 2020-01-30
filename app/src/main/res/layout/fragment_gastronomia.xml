@@ -121,13 +121,10 @@
                 android:layout_height="52dp"
                 android:layout_marginBottom="60dp"
                 android:layout_gravity="center|bottom"
+                android:textColor="@color/colorInput"
 
-                android:text="Me interesa"
-
-                style="@style/AppTheme.RoundedCornerMaterialButton"
-                android:ellipsize="none"
-
-                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@string/me_interesa"
+                android:background="@drawable/rounded_shape_blau">
                 >
             </Button>
 

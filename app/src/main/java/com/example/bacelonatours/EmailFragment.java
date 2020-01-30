@@ -17,10 +17,10 @@ import android.widget.Toast;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class emailFragment extends Fragment {
+public class EmailFragment extends Fragment {
 
 
-    public emailFragment() {
+    public EmailFragment() {
         // Required empty public constructor
     }
 

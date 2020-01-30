@@ -2,44 +2,27 @@ package com.example.bacelonatours;
 
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.content.res.Configuration;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
-
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.text.style.UnderlineSpan;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.material.navigation.NavigationView;
 import com.sunfusheng.marqueeview.MarqueeView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Handler;
 
 
 /**
@@ -52,6 +35,7 @@ public class HomeFragment extends Fragment {
 
     private TextView moviditor;
     private ImageView imgHome;
+    private Button entrar;
     private AnimationDrawable frameAnimation;
     AutenticacionViewModel autenticacionViewModel ;
 
@@ -74,13 +58,15 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
+
+
         view.findViewById(R.id.explorarTours).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.tourListFragment);
             }
         });
-        //view.findViewById(R.id.movidito);
 
         view.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -96,6 +82,7 @@ public class HomeFragment extends Fragment {
 
 
         // TEXTO DE LA HOME QUE VA CORRIENDO
+        entrar = view.findViewById(R.id.explorarTours);
         moviditor = view.findViewById(R.id.movidito);
         moviditor.setSelected(true);
 
@@ -107,7 +94,6 @@ public class HomeFragment extends Fragment {
         // get the background to show the animation
         frameAnimation = (AnimationDrawable) imgHome.getBackground();
         frameAnimation.start();
-
 
 
         // TEXTO DE LA IMAGENHOME CON MOVIMIENTO
@@ -122,5 +108,7 @@ public class HomeFragment extends Fragment {
 
         marqueeView.startWithList(listText);
     }
+
+
 
 }

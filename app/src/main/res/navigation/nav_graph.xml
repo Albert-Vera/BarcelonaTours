@@ -52,7 +52,7 @@
         tools:layout="@layout/fragment_ver_perfil" />
     <fragment
         android:id="@+id/emailFragment"
-        android:name="com.example.bacelonatours.emailFragment"
+        android:name="com.example.bacelonatours.EmailFragment"
         android:label=""
         tools:layout="@layout/fragment_email" />
     <fragment
